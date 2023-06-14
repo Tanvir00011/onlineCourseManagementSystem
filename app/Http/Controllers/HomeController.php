@@ -31,7 +31,7 @@ class HomeController extends Controller
 
     public function allTraining()
     {
-        $this->trainings= Training::all();
+        $this->trainings= Training::where('status',1)->get();
         return view('website.training.index',['trainings'=>$this->trainings]);
     }
 
