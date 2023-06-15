@@ -2,10 +2,10 @@
 <html lang="zxx">
 
 
-<!-- Mirrored from demo.themefisher.com/biztrox/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 22 Mar 2022 08:06:20 GMT -->
+
 <head>
     <meta charset="utf-8">
-    <title>OTMS BATCH 17- @yield('title')</title>
+    <title>Online Course Management- @yield('title')</title>
 
 
     <!-- mobile responsive meta -->
@@ -31,8 +31,8 @@
     <link href="{{asset('/')}}website/css/style.css" rel="stylesheet">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="{{asset('/')}}website/images/favicon.png" type="image/x-icon">
-    <link rel="icon" href="{{asset('/')}}website/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('/')}}website/images/logo3.png" type="image/x-icon">
+    <link rel="icon" href="{{asset('/')}}website/images/logo3.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -54,7 +54,7 @@
                 <div class="col-12">
                     <ul class="list-inline text-lg-right text-center">
                         <li class="list-inline-item">
-                            <a href="mailto:info@companyname.com">info@companyname.com</a>
+                            <a href="mailto:info@companyname.com">info@coursemanagement.com</a>
                         </li>
                         <li class="list-inline-item">
                             <a href="callto:1234565523">Call Us Now:
@@ -76,7 +76,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="{{route('home')}}">
-                    <img src="{{asset('/')}}website/images/logo.png" alt="logo">
+                    <img src="{{asset('/')}}website/images/logo2.png" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -86,8 +86,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item  active">
-                            <a class="nav-link " href="{{route('home')}}" role="button"  aria-haspopup="true">
+                        <li class="nav-item ">
+                            <a class="nav-link "  href="{{route('home')}}" role="button"  aria-haspopup="true">
                                 Home
                             </a>
 
@@ -204,9 +204,9 @@
                 <div class="col-md-4">
                     <div class="mb-5 mb-md-0 text-center text-md-left">
                         <!-- logo -->
-                        <img class="mb-30" src="{{asset('/')}}website/images/logo-footer.png" alt="logo">
-                        <p class="text-white mb-30">Lorem ipsum dolor amet consectetur adipisicing elit sed eiusm tempor incididunt
-                            labore dolore magna aliqua enim.</p>
+                        <img class="mb-19" src="{{asset('/')}}website/images/logo4.png" alt="logo">
+                        <span class="text-white ml-2">Online Course Management system</span>
+                        <p class="text-white mb-30 py-3">We Will provide the best courses for our students.Please Contact us for more..</p>
                         <!-- social icon -->
                         <ul class="list-inline">
                             <li class="list-inline-item">
@@ -349,6 +349,7 @@
 <script src="{{asset('/')}}website/js/script.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
 @if(Session::has('message'))
     <script>

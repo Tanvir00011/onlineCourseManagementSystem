@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('title')
-    Popular Training Institute NewCally
+    System
 @endsection
 
 @section('body')
