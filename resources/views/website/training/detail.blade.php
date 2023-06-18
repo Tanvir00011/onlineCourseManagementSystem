@@ -2,7 +2,7 @@
 
 @section('body')
 
-    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/page-title.jpg);">
+    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/category.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
