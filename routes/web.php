@@ -6,6 +6,7 @@ use App\Http\Controllers\DashBoardController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\TrainingMaterialController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdminTrainingController;
 use App\Http\Controllers\EnrollController;
@@ -52,6 +53,15 @@ Route::middleware(['teacher.auth'])->group(function (){
     Route::get('/training/edit/{id}',[TrainingController::class,'edit'])->name('training.edit');
     Route::post('/training/update/{id}',[TrainingController::class,'update'])->name('training.update');
     Route::post('/training/delete/{id}',[TrainingController::class,'delete'])->name('training.delete');
+
+    //Training Material
+    Route::get('/training/{id}/material/add',[TrainingMaterialController::class,'index'])->name('training.material.add');
+    Route::post('/training-material/create',[TrainingMaterialController::class,'create'])->name('training.material.create');
+    Route::get('/training-material/manage',[TrainingMaterialController::class,'manage'])->name('training.material.manage');
+    Route::get('/training-material/detail/{id}',[TrainingMaterialController::class,'detail'])->name('training.material.detail');
+    Route::get('/training-material/edit/{id}',[TrainingMaterialController::class,'edit'])->name('training.material.edit');
+    Route::post('/training-material/update/{id}',[TrainingMaterialController::class,'update'])->name('training.material.update');
+    Route::post('/training-material/delete/{id}',[TrainingMaterialController::class,'delete'])->name('training.material.delete');
 
 
 });

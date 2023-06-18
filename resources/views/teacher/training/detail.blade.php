@@ -7,7 +7,10 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Training Detail Info</h4>
+                    <div class="card-title d-flex  justify-content-between">
+                        <span>Training Detail Info</span>
+                     <a class="btn btn-outline-primary" href="{{route('training.material.add', ['id' => $training->id])}}">Add Course Material</a>
+                    </div>
 
                     <table  class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <h4 class="text-center text-success">{{session('message')}}</h4>
