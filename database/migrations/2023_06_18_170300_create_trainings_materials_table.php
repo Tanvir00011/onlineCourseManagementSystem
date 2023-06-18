@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('teacher_id');
             $table->string('title');
             $table->string('video');
+            $table->boolean('is_free_preview')->default(0);
             $table->string('thumbnail_image');
             $table->timestamps();
         });

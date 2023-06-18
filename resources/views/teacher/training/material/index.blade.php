@@ -31,6 +31,16 @@
                             <input type="file" name="thumbnail_image" class="form-control-file" accept="image/*"/>
                         </div>
                     </div>
+                    <div class="form-group row mb-4">
+                        <label class="col-sm-3 col-form-label"></label>
+                        <div class="col-sm-9">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" name="is_free_preview">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Can free preview!</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group row justify-content-end">
                         <div class="col-sm-9">
 
