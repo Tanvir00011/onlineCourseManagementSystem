@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">Add Course Material</h4>
                 <h4 class="text-center text-success">{{session('message')}}</h4>
-                <form action="{{route('training.material.create')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('training.material.create',['id'=>$id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group row mb-4">

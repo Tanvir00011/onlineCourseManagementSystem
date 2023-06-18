@@ -56,12 +56,12 @@ Route::middleware(['teacher.auth'])->group(function (){
 
     //Training Material
     Route::get('/training/{id}/material/add',[TrainingMaterialController::class,'index'])->name('training.material.add');
-    Route::post('/training-material/create',[TrainingMaterialController::class,'create'])->name('training.material.create');
-    Route::get('/training-material/manage',[TrainingMaterialController::class,'manage'])->name('training.material.manage');
-    Route::get('/training-material/detail/{id}',[TrainingMaterialController::class,'detail'])->name('training.material.detail');
-    Route::get('/training-material/edit/{id}',[TrainingMaterialController::class,'edit'])->name('training.material.edit');
-    Route::post('/training-material/update/{id}',[TrainingMaterialController::class,'update'])->name('training.material.update');
-    Route::post('/training-material/delete/{id}',[TrainingMaterialController::class,'delete'])->name('training.material.delete');
+    Route::post('/training-material/{id}/create',[TrainingMaterialController::class,'create'])->name('training.material.create');
+//    Route::get('/training-material/manage',[TrainingMaterialController::class,'manage'])->name('training.material.manage');
+//    Route::get('/training-material/detail/{id}',[TrainingMaterialController::class,'detail'])->name('training.material.detail');
+//    Route::get('/training-material/edit/{id}',[TrainingMaterialController::class,'edit'])->name('training.material.edit');
+//    Route::post('/training-material/update/{id}',[TrainingMaterialController::class,'update'])->name('training.material.update');
+//    Route::post('/training-material/delete/{id}',[TrainingMaterialController::class,'delete'])->name('training.material.delete');
 
 
 });
