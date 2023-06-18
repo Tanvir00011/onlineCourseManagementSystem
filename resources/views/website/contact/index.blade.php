@@ -7,7 +7,7 @@
 @section('body')
 
 
-    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/page-title.jpg);">
+    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/contactus.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -41,15 +41,15 @@
                         <li class="d-flex mb-30">
                             <i class="round-icon mr-3 ti-email"></i>
                             <div class="align-self-center font-primary">
-                                <p>info@biztrox.com</p>
-                                <p>biztrox@email.com</p>
+                                <p>info@coursemanagement.com</p>
+                                <p>onlinecourse@email.com</p>
                             </div>
                         </li>
                         <li class="d-flex mb-30">
                             <i class="round-icon mr-3 ti-map-alt"></i>
                             <div class="align-self-center font-primary">
-                                <p>24/B Garden Street.</p>
-                                <p>Northambia, Weals, UK</p>
+                                <p>121/B Mirbag.</p>
+                                <p>Malibag,Dhaka</p>
                             </div>
                         </li>
                     </ul>

@@ -102,32 +102,33 @@
                 <!-- service-item -->
                 <div class="col-sm-3">
                     <div class="mb-4 card px-2 py-5 text-center">
-                        <i class="h2 text-primary d-inline-block mb-20 ti-bar-chart"></i>
-                        <h4>Business Consulting</h4>
+                        <i class="h2 text-primary d-inline-block mb-20 fa-solid fa-cloud-arrow-up"></i>
+                        <h4>Free Update</h4>
                         <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
                 <!-- service-item -->
                 <div class="col-sm-3">
                     <div class="mb-4 card px-2 py-5 text-center">
-                        <i class="h2 text-primary d-inline-block mb-20 ti-thought"></i>
-                        <h4>Valuable Idea</h4>
+                        <i class="h2 text-primary d-inline-block mb-20 fa-sharp fa-solid fa-hand-holding-heart"></i>
+                        <h4>Friendly $ Full Support</h4>
                         <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
                 <!-- service-item -->
                 <div class="col-sm-3">
                     <div class="mb-4 card px-2 py-5 text-center">
-                        <i class="h2 text-primary d-inline-block mb-20 ti-server"></i>
-                        <h4>Market Strategy</h4>
+
+                        <i class="h2 text-primary d-inline-block mb-20 fa-solid fa-code"></i>
+                        <h4>Clean Code</h4>
                         <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
                 <!-- service-item -->
                 <div class="col-sm-3">
                     <div class="mb-4 card px-2 py-5 text-center">
-                        <i class="h2 text-primary d-inline-block mb-20 ti-bar-chart"></i>
-                        <h4>Business Consulting</h4>
+                        <i class="h2 text-primary d-inline-block mb-20 fa-brands fa-free-code-camp"></i>
+                        <h4>Free Resources</h4>
                         <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>

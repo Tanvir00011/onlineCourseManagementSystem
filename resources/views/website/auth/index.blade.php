@@ -5,7 +5,7 @@
 @endsection
 
 @section('body')
-    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/page-title.jpg);">
+    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/5172658.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -24,14 +24,13 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 d-flex">
                     <div class="signup">
                         <div class="row">
-                            <div class="col-md-5 signup-greeting overlay" style="background-image: url({{asset('/')}}website/images/background/signup.jpg);">
-                                <img src="{{asset('/')}}website/images/logo-signup.png" alt="logo">
+                            <div class="col-md-5 signup-greeting overlay "  style="background-image: url({{asset('/')}}website/images/background/6310507.jpg);">
+                                <img src="{{asset('/')}}website/images/logo4.png" alt="logo">
                                 <h4>Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
+                                <p>Please Login To Continue.</p>
                             </div>
                             <div class="col-md-7">
                                 <div class="signup-form">
@@ -74,11 +73,10 @@
                 <div class="col-md-6">
                     <div class="signup">
                         <div class="row">
-                            <div class="col-md-5 signup-greeting overlay" style="background-image: url({{asset('/')}}website/images/background/signup.jpg);">
-                                <img src="{{asset('/')}}website/images/logo-signup.png" alt="logo">
+                            <div class="col-md-5 signup-greeting overlay" style="background-image: url({{asset('/')}}website/images/background/6310507.jpg);">
+                                <img src="{{asset('/')}}website/images/logo4.png" alt="logo">
                                 <h4>Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
+                                <p>Please Signup To Continue.</p>
                             </div>
                             <div class="col-md-7">
                                 <div class="signup-form">

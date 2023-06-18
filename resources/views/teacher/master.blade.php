@@ -11,7 +11,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('/')}}admin/assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{asset('/')}}admin/assets/images/logo3.png">
 
     <!-- DataTables -->
     <link href="{{asset('/')}}admin/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -43,19 +43,19 @@
                 <div class="navbar-brand-box">
                     <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{{asset('/')}}admin/assets/images/logo.svg" alt="" height="22">
+                                    <img src="{{asset('/')}}admin/assets/images/logo3.png" alt="" height="22">
                                 </span>
                         <span class="logo-lg">
-                                    <img src="{{asset('/')}}admin/assets/images/logo-dark.png" alt="" height="17">
+                                    <img src="{{asset('/')}}admin/assets/images/logo3.png" alt="" height="17">
                                 </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{{asset('/')}}admin/assets/images/logo-light.svg" alt="" height="22">
+                                    <img src="{{asset('/')}}admin/assets/images/logo4.png" alt="" >
                                 </span>
                         <span class="logo-lg">
-                                    <img src="{{asset('/')}}admin/assets/images/logo-light.png" alt="" height="19">
+                                    <img src="{{asset('/')}}admin/assets/images/logo4.png" alt="" >
                                 </span>
                     </a>
                 </div>

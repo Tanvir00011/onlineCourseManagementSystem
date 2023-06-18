@@ -30,6 +30,8 @@
     <!-- Stylesheets -->
     <link href="{{asset('/')}}website/css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{asset('/')}}fontawesome-free-6.4.0-web/css/all.min.css">
+
     <!--Favicon-->
     <link rel="shortcut icon" href="{{asset('/')}}website/images/logo3.png" type="image/x-icon">
     <link rel="icon" href="{{asset('/')}}website/images/logo3.png" type="image/x-icon">
@@ -298,7 +300,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-5">
                     <p class="text-white text-center text-md-left">
-                        <span class="text-primary">Bizpro</span> &copy; 2017 All Right Reserved</p>
+                        <span class="text-primary">TM</span> &copy; 2013 All Right Reserved</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right">

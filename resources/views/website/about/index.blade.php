@@ -1,12 +1,12 @@
 @extends('website.master')
 
 @section('title')
-    About OTMS BATCH17
+    About Online Course Management System
 @endsection
 
 @section('body')
 
-    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/page-title.jpg);">
+    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/1.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
@@ -39,7 +39,7 @@
                 </div>
                 <!-- philosophy image -->
                 <div class="col-lg-5 align-self-center order-1 order-lg-2 mb-md-50">
-                    <img class="img-fluid w-100" src="{{asset('/')}}website/images/about/philosophy.jpg" alt="philosophy-image">
+                    <img class="img-fluid w-100" src="{{asset('/')}}website/images/about/6520.jpg" alt="philosophy-image">
                 </div>
             </div>
         </div>
