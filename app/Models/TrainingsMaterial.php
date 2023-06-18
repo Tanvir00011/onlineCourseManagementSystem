@@ -29,7 +29,6 @@ class TrainingsMaterial extends Model
         self::$trainingMaterial->teacher_id = Session::get('teacher_id');
         self::$trainingMaterial->training_id = $training_id;
         self:: $trainingMaterial->title = $request->title;
-        self:: $trainingMaterial->duration = '12:10';
         self:: $trainingMaterial->thumbnail_image = self::getFileUrl($request,'thumbnail_image','training-thumbnail_image');
         self:: $trainingMaterial->video = self::getFileUrl($request,'video','training-video');
         self:: $trainingMaterial->save();
