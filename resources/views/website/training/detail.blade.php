@@ -2,11 +2,12 @@
 
 @section('body')
 
-    <section class="page-title overlay" style="background-image: url({{asset('/')}}website/images/background/category.jpg);">
+    <section class="page-title overlay"
+        style="background-image: url({{ asset('/') }}website/images/background/category.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="text-white font-weight-bold">{{$training->title}}</h2>
+                    <h2 class="text-white font-weight-bold">{{ $training->title }}</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.html">Home</a>
@@ -24,13 +25,16 @@
             <div class="row">
                 <div class="col-lg-8 py-100">
                     <div class="border rounded bg-white">
-                        <img class="img-fluid w-100 rounded-top" src="{{asset($training->image)}}" alt="blog-image">
+                        <img class="img-fluid w-100 rounded-top" src="{{ asset($training->image) }}" alt="blog-image"
+                            style="width:100px; height:100px;">
                         <div class="p-4">
-                            <h3>{{$training->title}}</h3>
+                            <h3>{{ $training->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
-                                <li class="list-inline-item text-color">Trainer Name:{{$training->teacher->name}}</li>
-                                <li class="list-inline-item text-color">Training Starting Date:{{$training->starting_date}}</li>
-                                <li class="list-inline-item text-color">Training Category:{{$training->category->name}}</li>
+                                <li class="list-inline-item text-color">Trainer Name:{{ $training->teacher->name }}</li>
+                                <li class="list-inline-item text-color">Training Starting
+                                    Date:{{ $training->starting_date }}</li>
+                                <li class="list-inline-item text-color">Training Category:{{ $training->category->name }}
+                                </li>
                             </ul>
                             <div>{!! $training->description !!}</div>
                         </div>
@@ -84,6 +88,11 @@
                             </div>
                         </div>
                     </div>
+                    <video width="320" height="240" controls>
+
+                        <source src="{{ asset('/') }}upload/training-video/1687111705.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <!-- comments -->
                     <div>
 
@@ -92,36 +101,41 @@
                         <!-- comment form -->
                         <div>
 
-                            @if($enrollStatus == 0)
-                            <form action="{{route('training-enroll',['id'=>$training->id])}}" method="POST" class="row">
-                                @csrf
-                                @if(!Session::has('student_id'))
-                                    <h4>Enroll Form:</h4>
-                                    <p class="mb-30">Required fields are marked *</p>
-                                <div class="col-lg-12">
-                                    <label>Full Name<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control mb-30" id="user-name" name="name" placeholder="Your name here">
-                                    <span class="text-danger">{{$errors->has('name') ? $errors->first('name') : ''}}</span>
-                                </div>
-                                <div class="col-lg-12">
-                                    <label>Email Address<span class="text-danger">*</span></label>
-                                    <input type="email" id="user-email" name="email" class="form-control mb-30"
-                                           placeholder="Your email address here">
-                                    <span class="text-danger">{{$errors->has('email') ? $errors->first('email') : ''}}</span>
-                                </div>
-                                <div class="col-lg-12">
-                                    <label>Mobile Number<span class="text-danger">*</span></label>
-                                    <input type="number" id="user-mobile" name="mobile" class="form-control mb-30"
-                                           placeholder="Your mobile number here">
-                                    <span class="text-danger">{{$errors->has('mobile') ? $errors->first('mobile') : ''}}</span>
-                                </div>
+                            @if ($enrollStatus == 0)
+                                <form action="{{ route('training-enroll', ['id' => $training->id]) }}" method="POST"
+                                    class="row">
+                                    @csrf
+                                    @if (!Session::has('student_id'))
+                                        <h4>Enroll Form:</h4>
+                                        <p class="mb-30">Required fields are marked *</p>
+                                        <div class="col-lg-12">
+                                            <label>Full Name<span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control mb-30" id="user-name" name="name"
+                                                placeholder="Your name here">
+                                            <span
+                                                class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label>Email Address<span class="text-danger">*</span></label>
+                                            <input type="email" id="user-email" name="email" class="form-control mb-30"
+                                                placeholder="Your email address here">
+                                            <span
+                                                class="text-danger">{{ $errors->has('email') ? $errors->first('email') : '' }}</span>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label>Mobile Number<span class="text-danger">*</span></label>
+                                            <input type="number" id="user-mobile" name="mobile" class="form-control mb-30"
+                                                placeholder="Your mobile number here">
+                                            <span
+                                                class="text-danger">{{ $errors->has('mobile') ? $errors->first('mobile') : '' }}</span>
+                                        </div>
+                                    @endif
 
-                                @endif
-
-                                <div class="col-12">
-                                    <button class="btn btn-sm btn-primary" type="submit" value="send">Confirm Enroll</button>
-                                </div>
-                            </form>
+                                    <div class="col-12">
+                                        <button class="btn btn-sm btn-primary" type="submit" value="send">Confirm
+                                            Enroll</button>
+                                    </div>
+                                </form>
                             @else
                                 <button type="button" class="btn btn-success disabled">Already Enrolled</button>
                             @endif
@@ -165,7 +179,9 @@
                             <div class="d-flex py-3 border-bottom">
                                 <div class="mr-4">
                                     <a href="blog-single.html">
-                                        <img class="rounded" src="{{asset('/')}}website/images/blog/post-thumb-sm-01.jpg" alt="post-thumb">
+                                        <img class="rounded"
+                                            src="{{ asset('/') }}website/images/blog/post-thumb-sm-01.jpg"
+                                            alt="post-thumb">
                                     </a>
                                 </div>
                                 <div>
@@ -178,7 +194,9 @@
                             <div class="d-flex py-3 border-bottom">
                                 <div class="mr-4">
                                     <a href="blog-single.html">
-                                        <img class="rounded" src="{{asset('/')}}website/images/blog/post-thumb-sm-02.jpg" alt="post-thumb">
+                                        <img class="rounded"
+                                            src="{{ asset('/') }}website/images/blog/post-thumb-sm-02.jpg"
+                                            alt="post-thumb">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -191,7 +209,9 @@
                             <div class="d-flex py-3">
                                 <div class="mr-4">
                                     <a href="blog-single.html">
-                                        <img class="rounded" src="{{asset('/')}}website/images/blog/post-thumb-sm-03.jpg" alt="post-thumb">
+                                        <img class="rounded"
+                                            src="{{ asset('/') }}website/images/blog/post-thumb-sm-03.jpg"
+                                            alt="post-thumb">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -230,8 +250,10 @@
                         <div class="newsletter">
                             <h4 class="mb-3">Stay Updated</h4>
                             <form action="#">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name">
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                                <input type="text" name="name" id="name" class="form-control"
+                                    placeholder="Name">
+                                <input type="email" name="email" id="email" class="form-control"
+                                    placeholder="Email">
                                 <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
                             </form>
                         </div>

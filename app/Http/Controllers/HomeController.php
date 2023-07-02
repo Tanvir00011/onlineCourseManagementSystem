@@ -45,7 +45,6 @@ class HomeController extends Controller
         return view('website.auth.index');
     }
     public function trainingDetail($id)
-
     {
         $this->training = Training::find($id);
         $enrollStatus = Enroll::where(['training_id' => $id,'student_id'=> Session::get('student_id')])->first();
