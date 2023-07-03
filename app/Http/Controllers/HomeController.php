@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Enroll;
 use App\Models\Training;
+use App\Models\TrainingsMaterial;
 use Illuminate\Http\Request;
 use Session;
 
@@ -47,10 +48,13 @@ class HomeController extends Controller
     public function trainingDetail($id)
     {
         $this->training = Training::find($id);
+        $courses = TrainingsMaterial::where(['training_id' => $id,'is_free_preview'=>true])->get();
+
         $enrollStatus = Enroll::where(['training_id' => $id,'student_id'=> Session::get('student_id')])->first();
         return view('website.training.detail',[
             'training'=>$this->training,
             'enrollStatus' => isset($enrollStatus) ? 1 : 0,
+            'courses' => $courses,
         ]);
     }
 }

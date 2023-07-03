@@ -36,6 +36,10 @@
     <link rel="shortcut icon" href="{{asset('/')}}website/images/logo3.png" type="image/x-icon">
     <link rel="icon" href="{{asset('/')}}website/images/logo3.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+
+    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 
 <body>
@@ -169,35 +173,6 @@
 <!-- /navigation -->
 
 @yield('body')
-<!-- client logo slider -->
-<section class="bg-white py-4">
-    <div class="container">
-        <div class="client-logo-slider align-self-center">
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-1.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-2.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-3.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-4.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-5.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-1.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-2.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-3.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-4.png" alt="client-logo"></a>
-            <a href="#" class="text-center d-block outline-0 py-3 px-2"><img class="d-unset"
-                                                                             src="{{asset('/')}}website/images/client-logo/client-logo-5.png" alt="client-logo"></a>
-        </div>
-    </div>
-</section>
-<!-- /client logo slider -->
-
 <!-- footer -->
 <footer class="bg-secondary">
     <div class="py-100 border-bottom" style="border-color: #454547 !important">
@@ -349,6 +324,7 @@
 <script src="{{asset('/')}}website/plugins/swiper/swiper.min.js"></script>
 <!-- Main Script -->
 <script src="{{asset('/')}}website/js/script.js"></script>
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

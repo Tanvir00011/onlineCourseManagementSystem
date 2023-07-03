@@ -88,11 +88,6 @@
                             </div>
                         </div>
                     </div>
-                    <video width="320" height="240" controls>
-
-                        <source src="{{ asset('/') }}upload/training-video/1687111705.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
                     <!-- comments -->
                     <div>
 
@@ -142,88 +137,32 @@
                         </div>
                     </div>
                 </div>
+                @if (count($courses)>0)
                 <div class="col-lg-4">
                     <!-- Sidebar -->
-                    <div class="bg-white px-4 py-100 sidebar-box-shadow">
+                    <div class="bg-white px-2 py-100">
                         <!-- Search Widget -->
-                        <div class="mb-50">
-                            <h4 class="mb-3">Search Here</h4>
-                            <div class="search-wrapper">
-                                <input type="text" class="form-control" name="search" placeholder="Type Here...">
-                            </div>
+                        @foreach ($courses as $item)
+
+                        <div class="mb-2">
+                            <video id="my-video" class="video-js" controls preload="auto" height="264"
+                                poster="{{ asset($item->thumbnail_image) }}" data-setup='{"fluid": true}'>
+                                <source src="{{ asset($item->video) }}" type="video/mp4">
+                                {{-- <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" > --}}
+
+                                <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                        video</a>
+                                </p>
+                            </video>
                         </div>
-                        <!-- categories -->
-                        <div class="mb-50">
-                            <h4 class="mb-3">Categories</h4>
-                            <ul class="pl-0 mb-0">
-                                <li class="border-bottom">
-                                    <a href="#" class="d-block text-color py-10">Business Analysis</a>
-                                </li>
-                                <li class="border-bottom">
-                                    <a href="#" class="d-block text-color py-10">Consultancy</a>
-                                </li>
-                                <li class="border-bottom">
-                                    <a href="#" class="d-block text-color py-10">Investment</a>
-                                </li>
-                                <li class="border-bottom">
-                                    <a href="#" class="d-block text-color py-10">Profit & Growth</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-block text-color py-10">Marketing Guidance</a>
-                                </li>
-                            </ul>
-                        </div>
+                        @endforeach
                         <!-- Widget Recent Post -->
-                        <div class="mb-50">
-                            <h4 class="mb-3">Recent News</h4>
-                            <div class="d-flex py-3 border-bottom">
-                                <div class="mr-4">
-                                    <a href="blog-single.html">
-                                        <img class="rounded"
-                                            src="{{ asset('/') }}website/images/blog/post-thumb-sm-01.jpg"
-                                            alt="post-thumb">
-                                    </a>
-                                </div>
-                                <div>
-                                    <h6 class="mb-3">
-                                        <a class="text-dark" href="blog-single.html">Marketing Strategy 2017-2018.</a>
-                                    </h6>
-                                    <p class="meta">16 Dec, 2018</p>
-                                </div>
-                            </div>
-                            <div class="d-flex py-3 border-bottom">
-                                <div class="mr-4">
-                                    <a href="blog-single.html">
-                                        <img class="rounded"
-                                            src="{{ asset('/') }}website/images/blog/post-thumb-sm-02.jpg"
-                                            alt="post-thumb">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h6 class="mb-3">
-                                        <a class="text-dark" href="blog-single.html">Jack Ma & future of E-commerce</a>
-                                    </h6>
-                                    <p class="meta">16 Dec, 2018</p>
-                                </div>
-                            </div>
-                            <div class="d-flex py-3">
-                                <div class="mr-4">
-                                    <a href="blog-single.html">
-                                        <img class="rounded"
-                                            src="{{ asset('/') }}website/images/blog/post-thumb-sm-03.jpg"
-                                            alt="post-thumb">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h6 class="mb-3">
-                                        <a class="text-dark" href="blog-single.html">Jack Ma & future of E-commerce</a>
-                                    </h6>
-                                    <p class="meta">16 Dec, 2018</p>
-                                </div>
-                            </div>
-                        </div>
+
                         <!-- Widget Tags -->
-                        <div class="mb-50">
+                        {{-- <div class="mb-50">
                             <h4 class="mb-3">Tags</h4>
                             <ul class="list-inline tag-list">
                                 <li class="list-inline-item">
@@ -245,20 +184,11 @@
                                     <a href="#">Rvenenue</a>
                                 </li>
                             </ul>
-                        </div>
-                        <!-- Widget Newsletter -->
-                        <div class="newsletter">
-                            <h4 class="mb-3">Stay Updated</h4>
-                            <form action="#">
-                                <input type="text" name="name" id="name" class="form-control"
-                                    placeholder="Name">
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="Email">
-                                <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
-                            </form>
-                        </div>
+                        </div> --}}
+
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </section>
