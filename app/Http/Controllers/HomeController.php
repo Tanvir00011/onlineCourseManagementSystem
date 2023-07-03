@@ -48,13 +48,16 @@ class HomeController extends Controller
     public function trainingDetail($id)
     {
         $this->training = Training::find($id);
-        $courses = TrainingsMaterial::where(['training_id' => $id,'is_free_preview'=>true])->get();
-
         $enrollStatus = Enroll::where(['training_id' => $id,'student_id'=> Session::get('student_id')])->first();
+        if(isset($enrollStatus)){//if enrolled show all the courses // else show only video which is free
+            $course_materials = TrainingsMaterial::where(['training_id' => $id])->get();
+        }else{
+            $course_materials = TrainingsMaterial::where(['training_id' => $id,'is_free_preview'=>true])->get();
+        }
         return view('website.training.detail',[
             'training'=>$this->training,
             'enrollStatus' => isset($enrollStatus) ? 1 : 0,
-            'courses' => $courses,
+            'course_materials' => $course_materials,
         ]);
     }
 }

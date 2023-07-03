@@ -137,12 +137,12 @@
                         </div>
                     </div>
                 </div>
-                @if (count($courses)>0)
+                @if (count($course_materials)>0)
                 <div class="col-lg-4">
                     <!-- Sidebar -->
                     <div class="bg-white px-2 py-100">
                         <!-- Search Widget -->
-                        @foreach ($courses as $item)
+                        @foreach ($course_materials as $item)
 
                         <div class="mb-2">
                             <video id="my-video" class="video-js" controls preload="auto" height="264"
