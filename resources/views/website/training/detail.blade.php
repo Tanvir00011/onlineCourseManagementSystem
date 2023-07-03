@@ -25,8 +25,8 @@
             <div class="row">
                 <div class="col-lg-8 py-100">
                     <div class="border rounded bg-white">
-                        <img class="img-fluid w-100 rounded-top" src="{{ asset($training->image) }}" alt="blog-image"
-                            style="width:100px; height:100px;">
+                        <img class="img-fluid w-100 rounded-top " src="{{ asset($training->image) }}" alt="blog-image"
+                            style=" height:200px; object-fit: cover">
                         <div class="p-4">
                             <h3>{{ $training->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">

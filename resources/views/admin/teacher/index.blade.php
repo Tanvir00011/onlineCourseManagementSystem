@@ -10,33 +10,33 @@
                 <form action="{{route('teacher.create')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row mb-4">
-                        <label  class="col-sm-3 col-form-label">Full name</label>
+                        <label  class="col-sm-3 col-form-label">Full name <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
-                        <label  class="col-sm-3 col-form-label">Email Address</label>
+                        <label  class="col-sm-3 col-form-label">Email Address <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                            <input type="email" name="email" class="form-control" >
+                            <input type="email" name="email" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
-                        <label  class="col-sm-3 col-form-label">Password</label>
+                        <label  class="col-sm-3 col-form-label">Password <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                            <input type="password" name="password" class="form-control" >
+                            <input type="password" name="password" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
-                        <label class="col-sm-3 col-form-label">Mobile Number</label>
+                        <label class="col-sm-3 col-form-label">Mobile Number <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                            <input type="number" name="mobile" class="form-control">
+                            <input type="number" name="mobile" class="form-control" required>
                         </div>
                     </div>
                     <div class="form-group row mb-4">
-                        <label class="col-sm-3 col-form-label">Image</label>
+                        <label class="col-sm-3 col-form-label">Image <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                            <input type="file" name="image" class="form-control-file"/>
+                            <input type="file" name="image" class="form-control-file" required/>
                         </div>
                     </div>
                     <div class="form-group row justify-content-end">
