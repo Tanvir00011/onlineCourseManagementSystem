@@ -195,7 +195,7 @@
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="rounded-circle header-profile-user"
-                                src="{{ asset('/') }}{{session('teacher_image')}}" alt="Header Avatar">
+                                src="{{ asset('/') }}{{ session('teacher_image') }}" alt="Header Avatar">
                             <span class="d-none d-xl-inline-block ml-1">{{ session('teacher_name') }}</span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>
@@ -235,9 +235,8 @@
 
                         <li>
                             <a href="{{ route('teacher.dashboard') }}" class="waves-effect">
-                                <i class="bx bx-home-circle"></i><span
-                                    class="badge badge-pill badge-info float-right">03</span>
-                                <span>Dashboards</span>
+                                <i class="bx bx-home-circle"></i>
+                                <span>Dashboard</span>
                             </a>
                         </li>
 
@@ -254,7 +253,7 @@
                         </li>
 
 
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-store"></i>
                                 <span>Enroll Module</span>
@@ -262,7 +261,7 @@
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="ecommerce-products.html">Manage Enroll</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
 
 
                     </ul>

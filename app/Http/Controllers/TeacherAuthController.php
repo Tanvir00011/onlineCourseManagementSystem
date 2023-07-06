@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\Training;
 use Illuminate\Http\Request;
 use Session;
 
 class TeacherAuthController extends Controller
-{   private $teacher;
+{
+    private $teacher;
 
     public function index()
     {
@@ -16,31 +19,28 @@ class TeacherAuthController extends Controller
 
     public function login(Request $request)
     {
-        $this->teacher = Teacher::where('email',$request->email)->first();
-        if($this->teacher)
-        {
-            if(password_verify($request->password,$this->teacher->password))
-            {
-                Session::put('teacher_id',$this->teacher->id);
-                Session::put('teacher_name',$this->teacher->name);
-                Session::put('teacher_image',$this->teacher->image);
+        $this->teacher = Teacher::where('email', $request->email)->first();
+        if ($this->teacher) {
+            if (password_verify($request->password, $this->teacher->password)) {
+                Session::put('teacher_id', $this->teacher->id);
+                Session::put('teacher_name', $this->teacher->name);
+                Session::put('teacher_image', $this->teacher->image);
                 return redirect('/teacher/dashboard');
+            } else {
+                return back()->with('message', 'Sorry..Password is Wrong.');
             }
-            else
-            {
-                return back()->with('message','Sorry..Password is Wrong.');
-            }
-        }
-        else
-        {
-            return back()->with('message','Sorry..email address is wrong.');
+        } else {
+            return back()->with('message', 'Sorry..email address is wrong.');
         }
     }
 
     public function dashboard()
     {
-        return view('teacher.dashboard.index');
+        $publishedCourseCount = Training::where('status', 1)->where('teacher_id',  Session::get('teacher_id'))->count();
+        $unpublishedCourseCount = Training::where('status', 0)->where('teacher_id',  Session::get('teacher_id'))->count();
+        return view('teacher.dashboard.index',  ['unpublishedCourseCount' => $unpublishedCourseCount, 'publishedCourseCount' => $publishedCourseCount]);
     }
+
     public function logout()
     {
         Session::forget('teacher_id');

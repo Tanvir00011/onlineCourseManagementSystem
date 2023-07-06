@@ -231,9 +231,8 @@
 
                         <li>
                             <a href="{{ route('dashboard') }}" class="waves-effect">
-                                <i class="bx bx-home-circle"></i><span
-                                    class="badge badge-pill badge-info float-right">03</span>
-                                <span>Dashboards</span>
+                                <i class="bx bx-home-circle"></i>
+                                <span>Dashboard</span>
                             </a>
                         </li>
 
@@ -272,7 +271,7 @@
                             </ul>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-bitcoin"></i>
                                 <span>Student Module</span>
@@ -280,29 +279,7 @@
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="crypto-wallet.html">Manage Student</a></li>
                             </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-envelope"></i>
-                                <span>Admission Module</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="email-inbox.html">Manage Admission</a></li>
-
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="bx bx-receipt"></i>
-                                <span>User Module</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="invoices-list.html">Add User</a></li>
-                                <li><a href="invoices-detail.html">Manage User</a></li>
-                            </ul>
-                        </li>
+                        </li> --}}
 
                     </ul>
                 </div>
