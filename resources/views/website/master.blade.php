@@ -275,7 +275,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-5">
                     <p class="text-white text-center text-md-left">
-                        <span class="text-primary">TM</span> &copy; 2013 All Right Reserved</p>
+                        <span class="text-primary">TM</span> &copy; 2023 All Right Reserved</p>
                 </div>
                 <div class="col-lg-6 col-md-7">
                     <ul class="list-inline text-center text-md-right">
