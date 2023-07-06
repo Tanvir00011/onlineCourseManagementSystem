@@ -23,6 +23,7 @@ class TeacherAuthController extends Controller
             {
                 Session::put('teacher_id',$this->teacher->id);
                 Session::put('teacher_name',$this->teacher->name);
+                Session::put('teacher_image',$this->teacher->image);
                 return redirect('/teacher/dashboard');
             }
             else

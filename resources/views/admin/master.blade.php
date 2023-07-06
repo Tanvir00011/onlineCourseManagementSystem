@@ -191,7 +191,7 @@
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="rounded-circle header-profile-user"
-                                src="{{ asset('/') }}admin/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                src="{{ asset('/') }}admin/assets/images/users/default_image.jpg" alt="Header Avatar">
                             <span class="d-none d-xl-inline-block ml-1">Henry</span>
                             <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                         </button>
