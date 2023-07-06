@@ -5,88 +5,30 @@
 @endsection
 
 @section('body')
-
     <section>
-        <div class="hero-slider position-relative">
-            <div class="hero-slider-item py-160" style="background-image: url({{asset('/')}}website/images/banner/21421.jpg);"
-                 data-icon="ti-comments" data-text="Consultation">
+        <div class="position-relative">
+            <div class="hero-slider-item py-160"
+                style="background-image: url({{ asset('/') }}website/images/banner/21421.jpg);" data-icon="ti-comments"
+                data-text="Consultation">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="hero-content float-right">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">We
-                                    are here to</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">
-                                    Planning Business</h1>
-                                <p class="text-dark mb-50 font-weight-bold" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem
+                                <p class="text-dark mb-150"></p>
+                                <p class="text-dark mb-50"></p>
+                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".1">&nbsp;</h4>
+                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft"
+                                    data-delay-in=".5">
+                                    &nbsp;</h1>
+                                <p class="text-dark mb-50 font-weight-bold" data-duration-in=".5"
+                                    data-animation-in="fadeInLeft" data-delay-in=".9" style="height: 100px;">
+                                    {{-- Lorem
                                     ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
+                                    <br> incididunt ut labore et dolore magna aliqua. --}}
                                 </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="about.html"
-                                   class="btn btn-outline text-uppercase">more details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160" style="background-image: url({{asset('/')}}website/images/banner/2.jpg);"
-                 data-icon="ti-bar-chart" data-text="Marketting">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".1">
-                                    Get your</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".5">
-                                    Business Consultant</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".9">Lorem
-                                    ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="about-2.html"
-                                   class="btn btn-outline text-uppercase">more details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160" style="background-image: url({{asset('/')}}website/images/banner/3.jpg);" data-icon="ti-money"
-                 data-text="Finance">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".1">
-                                    Start your</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".5">
-                                    Future Plan</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".9">Lorem
-                                    ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="about.html"
-                                   class="btn btn-outline text-uppercase">more details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-slider-item py-160" style="background-image: url({{asset('/')}}website/images/banner/5.jpg);"
-                 data-icon="ti-package" data-text="Human Resources">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-content">
-                                <h4 class="text-uppercase mb-1" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".1">We
-                                    are always</h4>
-                                <h1 class="font-weight-bold mb-3" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".5">
-                                    Be Inspired By Best</h1>
-                                <p class="text-dark mb-50" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".9">Lorem
-                                    ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    <br> incididunt ut labore et dolore magna aliqua.
-                                </p>
-                                <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3" href="about-2.html"
-                                   class="btn btn-outline text-uppercase">more details</a>
+                                {{-- <a data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="1.3"
+                                    href="about.html" class="btn btn-outline text-uppercase">more details</a> --}}
                             </div>
                         </div>
                     </div>
@@ -145,17 +87,19 @@
                     <h5 class="section-title-sm">UpComing Training</h5>
                     <h2 class="section-title section-title-border">Our UpComing Training</h2>
                 </div>
-                @foreach($trainings as $training)
+                @foreach ($trainings as $training)
                     <!-- service item -->
                     <div class="col-lg-4 col-sm-6 mb-5">
                         <div class="card text-center">
                             <div class="card-img-wrapper overlay-rounded-top">
-                                <img class="card-img-top rounded-0" src="{{asset($training->image)}}" alt="service-image" height="250">
+                                <img class="card-img-top rounded-0" src="{{ asset($training->image) }}" alt="service-image"
+                                    height="250">
                             </div>
                             <div class="card-body p-0">
-                                <h4 class="card-title pt-3">{{$training->title}}</h4>
-                                <p class="card-text mx-2 mb-0">Starting Date: {{$training->starting_date}}</p>
-                                <a href="{{route('training-detail',['id'=>$training->id])}}" class="btn btn-secondary translateY-25">Read More</a>
+                                <h4 class="card-title pt-3">{{ $training->title }}</h4>
+                                <p class="card-text mx-2 mb-0">Starting Date: {{ $training->starting_date }}</p>
+                                <a href="{{ route('training-detail', ['id' => $training->id]) }}"
+                                    class="btn btn-secondary translateY-25">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -174,28 +118,34 @@
                     <h2 class="section-title section-title-border"> What Student Say </h2>
                 </div>
                 <div class="col-lg-5 col-md-5 pr-0 align-self-center">
-                    <img class="img-fluid w-100" src="{{asset('/')}}website/images/client.png" alt="clients-image">
+                    <img class="img-fluid w-100" src="{{ asset('/') }}website/images/client.png" alt="clients-image">
                 </div>
                 <div class="col-lg-7 col-md-7 align-self-center pl-0">
                     <div class="testimonial-slider p-5">
                         <!-- slider item -->
                         <div class="outline-0">
                             <i class="testimonial-icon ti-quote-left"></i>
-                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
+                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid
+                                sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi
+                                aliquip excepteur.</p>
                             <h4 class="font-weight-normal">Julia Robertson</h4>
                             <h6 class="font-secondary text-color">Happy Clients</h6>
                         </div>
                         <!-- slider item -->
                         <div class="outline-0">
                             <i class="testimonial-icon ti-quote-left"></i>
-                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
+                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid
+                                sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi
+                                aliquip excepteur.</p>
                             <h4 class="font-weight-normal">Julia Robertson</h4>
                             <h6 class="font-secondary text-color">Happy Clients</h6>
                         </div>
                         <!-- slider item -->
                         <div class="outline-0">
                             <i class="testimonial-icon ti-quote-left"></i>
-                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi aliquip excepteur.</p>
+                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid
+                                sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi
+                                aliquip excepteur.</p>
                             <h4 class="font-weight-normal">Julia Robertson</h4>
                             <h6 class="font-secondary text-color">Happy Clients</h6>
                         </div>
