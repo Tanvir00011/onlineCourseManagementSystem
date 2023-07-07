@@ -28,7 +28,7 @@
                         </tr>
                         <tr>
                             <th>Course Description</th>
-                            <td>{{$course->description}}</td>
+                            <td>{!!$course->description!!}</td>
                         </tr>
                         <tr>
                             <th>Course Date</th>

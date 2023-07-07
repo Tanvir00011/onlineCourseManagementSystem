@@ -9,29 +9,29 @@ use Session;
 
 class CourseController extends Controller
 {
-    private $categories, $course,$courses;
+    private $categories, $course, $courses;
 
     public function index()
-
     {
         $this->categories = Category::all();
-        return view('teacher.course.index',['categories' => $this->categories]);
+        return view('teacher.course.index', ['categories' => $this->categories]);
     }
 
     public function create(Request $request)
     {
         Course::NewCourse($request);
-        return back()->with('message','Course Info Created Successfully');
+        return back()->with('message', 'Course Info Created Successfully');
     }
 
     public function manage()
-    {   $this->courses = Course::where('teacher_id',Session::get('teacher_id'))->get();
-        return view('teacher.course.manage',['courses'=>$this->courses]);
+    {
+        $this->courses = Course::where('teacher_id', Session::get('teacher_id'))->get();
+        return view('teacher.course.manage', ['courses' => $this->courses]);
     }
     public function detail($id)
     {
         $this->course = Course::find($id);
-        return view('teacher.course.detail',['course'=>$this->course]);
+        return view('teacher.course.detail', ['course' => $this->course]);
     }
     public function edit($id)
     {
@@ -41,8 +41,7 @@ class CourseController extends Controller
     }
     public function update(Request $request, $id)
     {
-        if ($request->file('image'))
-        {
+        if ($request->file('image')) {
             $this->validate($request, [
                 'image' => 'image'
             ]);

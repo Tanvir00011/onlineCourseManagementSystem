@@ -31,7 +31,7 @@ class Course extends Model
         self:: $course->title = $request->title;
         self:: $course->description = $request->description;
         self:: $course->starting_date = $request->starting_date;
-        self:: $course->price = $request->price;
+        self:: $course->price = 0;
         self:: $course->image = self::getImageUrl($request);
         self:: $course->save();
     }
@@ -58,7 +58,7 @@ class Course extends Model
         self:: $course->title = $request->title;
         self:: $course->description = $request->description;
         self:: $course->starting_date = $request->starting_date;
-        self:: $course->price = $request->price;
+        // self:: $course->price = $request->price;
         self:: $course->image = self::$imageUrl;
         self:: $course->save();
     }
