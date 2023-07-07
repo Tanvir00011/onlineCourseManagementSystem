@@ -61,7 +61,7 @@ class Category extends Model
         }
         self::$category->delete();
     }
-    public function trainings()
+    public function courses()
     {
         return $this->hasmany(Course::class);
     }

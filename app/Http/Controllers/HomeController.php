@@ -11,11 +11,11 @@ use Session;
 
 class HomeController extends Controller
 {
-    private $training,$trainings,$category, $categories;
+    private $training,$courses,$category, $categories;
     public function index()
     {
-        $this->trainings = Course::where('status',1)->get();
-        return view('website.home.index',['trainings'=>$this->trainings]);
+        $this->courses = Course::where('status',1)->get();
+        return view('website.home.index',['courses'=>$this->courses]);
     }
 
     public function about()
@@ -32,8 +32,8 @@ class HomeController extends Controller
 
     public function allTraining()
     {
-        $this->trainings= Course::where('status',1)->get();
-        return view('website.training.index',['trainings'=>$this->trainings]);
+        $this->courses= Course::where('status',1)->get();
+        return view('website.training.index',['courses'=>$this->courses]);
     }
 
     public function contact()

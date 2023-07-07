@@ -9,7 +9,7 @@ use Session;
 
 class CourseMaterialController extends Controller
 {
-    private $categories, $training,$trainings;
+    private $categories, $training,$courses;
 
     public function index($id)
 
@@ -24,8 +24,8 @@ class CourseMaterialController extends Controller
     }
 
 //    public function manage()
-//    {   $this->trainings = Course::where('teacher_id',Session::get('teacher_id'))->get();
-//        return view('teacher.training.manage',['trainings'=>$this->trainings]);
+//    {   $this->courses = Course::where('teacher_id',Session::get('teacher_id'))->get();
+//        return view('teacher.training.manage',['courses'=>$this->courses]);
 //    }
 //    public function detail($id)
 //    {

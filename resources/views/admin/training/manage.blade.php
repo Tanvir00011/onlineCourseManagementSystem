@@ -24,7 +24,7 @@
 
 
                         <tbody>
-                        @foreach($trainings as $training)
+                        @foreach($courses as $training)
                             <tr class="{{$training->status == 1 ? '' : 'bg-warning text-white'}}">
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$training->title}}</td>

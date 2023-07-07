@@ -87,7 +87,7 @@
                     <h5 class="section-title-sm">UpComing Course</h5>
                     <h2 class="section-title section-title-border">Our UpComing Course</h2>
                 </div>
-                @foreach ($trainings as $training)
+                @foreach ($courses as $training)
                     <!-- service item -->
                     <div class="col-lg-4 col-sm-6 mb-5">
                         <div class="card text-center">

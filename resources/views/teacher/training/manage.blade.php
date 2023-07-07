@@ -24,7 +24,7 @@
 
 
                         <tbody>
-                        @foreach($trainings as $training)
+                        @foreach($courses as $training)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$training->title}}</td>
