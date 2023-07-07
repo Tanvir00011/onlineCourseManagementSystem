@@ -20,7 +20,7 @@ class CourseController extends Controller
 
     public function create(Request $request)
     {
-        Course::NewTraining($request);
+        Course::NewCourse($request);
         return back()->with('message','Course Info Created Successfully');
     }
 
@@ -47,13 +47,13 @@ class CourseController extends Controller
                 'image' => 'image'
             ]);
         }
-        Course::updateTraining($request, $id);
+        Course::updateCourse($request, $id);
         return redirect('/course/manage')->with('message', 'Course Module Updated Successfully');
     }
 
     public function delete($id)
     {
-        Course::deleteTraining($id);
+        Course::deleteCourse($id);
         return back()->with('message', 'Course Module Deleted Successfully');
     }
 }

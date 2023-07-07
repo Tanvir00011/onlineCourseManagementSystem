@@ -22,7 +22,7 @@ class AdminCourseController extends Controller
 
     public function updateStatus($id)
     {
-        $this->message= Course::UpdateTrainingStatus($id);
+        $this->message= Course::UpdateCourseStatus($id);
         return back()->with('message',$this->message);
 
     }

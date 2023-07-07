@@ -19,7 +19,7 @@ class CourseMaterialController extends Controller
 
     public function create(Request $request, $id)
     {
-        CourseMaterial::NewTrainingMaterial($request, $id);
+        CourseMaterial::NewCourseMaterial($request, $id);
         return back()->with('message','Course Info Created Successfully');
     }
 
@@ -46,13 +46,13 @@ class CourseMaterialController extends Controller
 //                'image' => 'image'
 //            ]);
 //        }
-//        Course::updateTraining($request, $id);
+//        Course::updateCourse($request, $id);
 //        return redirect('/course/manage')->with('message', 'Course Module Updated Successfully');
 //    }
 //
 //    public function delete($id)
 //    {
-//        Course::deleteTraining($id);
+//        Course::deleteCourse($id);
 //        return back()->with('message', 'Course Module Deleted Successfully');
 //    }
 }

@@ -10,7 +10,7 @@ class CourseMaterial extends Model
 {
     use HasFactory;
 
-    private static $trainingMaterial,$file,$fileUrl,$directory,$extension,$fileName,$message;
+    private static $courseMaterial,$file,$fileUrl,$directory,$extension,$fileName,$message;
 
     public static function getFileUrl($request, $file_name, $file_location)
     {
@@ -23,18 +23,18 @@ class CourseMaterial extends Model
         return self::$fileUrl;
     }
 
-    public static function NewTrainingMaterial($request, $training_id)
+    public static function NewCourseMaterial($request, $course_id)
     {
-        self:: $trainingMaterial = New CourseMaterial();
-        self::$trainingMaterial->teacher_id = Session::get('teacher_id');
-        self::$trainingMaterial->training_id = $training_id;
-        self:: $trainingMaterial->title = $request->title;
+        self:: $courseMaterial = New CourseMaterial();
+        self::$courseMaterial->teacher_id = Session::get('teacher_id');
+        self::$courseMaterial->course_id = $course_id;
+        self:: $courseMaterial->title = $request->title;
         if($request->is_free_preview){
-            self:: $trainingMaterial->is_free_preview =true;
+            self:: $courseMaterial->is_free_preview =true;
         }
-        self:: $trainingMaterial->thumbnail_image = self::getFileUrl($request,'thumbnail_image','course-thumbnail_image');
-        self:: $trainingMaterial->video = self::getFileUrl($request,'video','course-video');
-        self:: $trainingMaterial->save();
+        self:: $courseMaterial->thumbnail_image = self::getFileUrl($request,'thumbnail_image','course-thumbnail_image');
+        self:: $courseMaterial->video = self::getFileUrl($request,'video','course-video');
+        self:: $courseMaterial->save();
     }
 
 
@@ -42,20 +42,20 @@ class CourseMaterial extends Model
     {
         return $this->belongsTo(Course::class);
     }
-    public static function UpdateTrainingStatus($id)
+    public static function UpdateCourseStatus($id)
     {
-        self::$trainingMaterial = Course::find($id);
-        if(self::$trainingMaterial->status ==1)
+        self::$courseMaterial = Course::find($id);
+        if(self::$courseMaterial->status ==1)
         {
-            self::$trainingMaterial->status = 0;
+            self::$courseMaterial->status = 0;
             self::$message = "Course Status info unpublished Successfully";
         }
         else
         {
-            self::$trainingMaterial->status = 1;
+            self::$courseMaterial->status = 1;
             self::$message = "Course Status info published Successfully";
         }
-        self::$trainingMaterial->save();
+        self::$courseMaterial->save();
         return self::$message;
     }
 }

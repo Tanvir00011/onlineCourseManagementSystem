@@ -11,10 +11,10 @@ class Enroll extends Model
 
     private static $enroll;
 
-    public static function newEnroll($trainingId,$studentId)
+    public static function newEnroll($courseId,$studentId)
     {
         self::$enroll = new Enroll();
-        self::$enroll->training_id = $trainingId;
+        self::$enroll->course_id = $courseId;
         self::$enroll->student_id  = $studentId;
         self::$enroll->enroll_date = date('Y-m-d');
         self::$enroll->payment_amount = 0;

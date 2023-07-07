@@ -23,7 +23,7 @@ class Course extends Model
         return self::$imageUrl;
     }
 
-    public static function NewTraining($request)
+    public static function NewCourse($request)
     {
         self:: $course = New Course();
         self::$course->category_id = $request->category_id;
@@ -36,7 +36,7 @@ class Course extends Model
         self:: $course->save();
     }
 
-    public static function updateTraining($request,$id)
+    public static function updateCourse($request,$id)
     {
         self:: $course = Course::find($id);
 
@@ -63,7 +63,7 @@ class Course extends Model
         self:: $course->save();
     }
 
-    public static function deleteTraining($id)
+    public static function deleteCourse($id)
     {
         self:: $course = Course::find($id);
         if (file_exists(self:: $course->image))
@@ -81,7 +81,7 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
-    public static function UpdateTrainingStatus($id)
+    public static function UpdateCourseStatus($id)
     {
         self::$course = Course::find($id);
         if(self::$course->status ==1)
