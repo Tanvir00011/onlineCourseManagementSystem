@@ -44,6 +44,7 @@ Route::post('/teacher/login',[TeacherAuthController::class,'login'])->name('teac
 
 Route::middleware(['teacher.auth'])->group(function (){
     Route::get('/teacher/dashboard',[TeacherAuthController::class,'dashboard'])->name('teacher.dashboard');
+    Route::get('/teacher/enrolled-student',[TeacherAuthController::class,'enrolledStudent'])->name('teacher.enrolled.student');
     Route::post('/teacher/logout',[TeacherAuthController::class,'logout'])->name('teacher.logout');
 
     Route::get('/course/add',[CourseController::class,'index'])->name('course.add');

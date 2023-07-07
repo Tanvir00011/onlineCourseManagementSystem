@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Course;
+use App\Models\Enroll;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 
 class TeacherAuthController extends Controller
@@ -46,5 +48,18 @@ class TeacherAuthController extends Controller
         Session::forget('teacher_id');
         Session::forget('teacher_name');
         return redirect('/teacher/login');
+    }
+
+    public function enrolledStudent(){
+        $enrolls = DB::table('enrolls')
+            ->join('courses', function ($join) {
+                $join->on('courses.id', '=', 'enrolls.course_id')
+                     ->where('courses.teacher_id', '=',  Session::get('teacher_id'));
+            })
+            ->join('students', 'students.id', '=', 'enrolls.student_id')
+            ->where('enroll_status', 'approved')
+            ->select('enrolls.*', 'courses.title as course_title', 'students.name as student_name')
+            ->get();
+        return view('teacher.enroll.enrolledStudent',['enrolls'=>$enrolls]);
     }
 }

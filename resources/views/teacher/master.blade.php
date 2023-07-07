@@ -250,6 +250,12 @@
                                 <li><a href="{{ route('course.manage') }}">Manage Course</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="{{ route('teacher.enrolled.student') }}" class="waves-effect">
+                                <i class="bx bx-store"></i>
+                                <span>All Enrolled Student</span>
+                            </a>
+                        </li>
                         {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-store"></i>
