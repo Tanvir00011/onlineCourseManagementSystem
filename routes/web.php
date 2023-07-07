@@ -8,7 +8,7 @@ use App\Http\Controllers\TeacherAuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseMaterialController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\AdminCourseController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\StudentController;
 /*
@@ -85,7 +85,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/category/update/{id}',[CategoryController::class,'update'] )->name('category.update');
     Route::post('/category/delete/{id}',[CategoryController::class,'delete'] )->name('category.delete');
 
-    Route::get('/admin/manage-course',[AdminCourseController::class,'index'] )->name('admin.manage-course');
-    Route::get('/admin/course-detail/{id}',[AdminCourseController::class,'detail'] )->name('admin.course-detail');
-    Route::get('/admin/update-course-status/{id}',[AdminCourseController::class,'updateStatus'] )->name('admin.update-course-status');
+    Route::get('/admin/manage-enroll',[AdminController::class,'manageEnroll'] )->name('admin.manage-enroll');
+    Route::get('/admin/update-enroll-status/{id}',[AdminController::class,'updateEnrollStatus'] )->name('admin.update-enroll-status');
+    Route::get('/admin/manage-course',[AdminController::class,'manageCourse'] )->name('admin.manage-course');
+    Route::get('/admin/course-detail/{id}',[AdminController::class,'courseDetail'] )->name('admin.course-detail');
+    Route::get('/admin/update-course-status/{id}',[AdminController::class,'updateCourseStatus'] )->name('admin.update-course-status');
 });

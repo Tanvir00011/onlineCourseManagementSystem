@@ -248,11 +248,8 @@
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="{{ route('course.add') }}">Add Course</a></li>
                                 <li><a href="{{ route('course.manage') }}">Manage Course</a></li>
-
                             </ul>
                         </li>
-
-
                         {{-- <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-store"></i>
@@ -262,8 +259,6 @@
                                 <li><a href="ecommerce-products.html">Manage Enroll</a></li>
                             </ul>
                         </li> --}}
-
-
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -279,7 +274,6 @@
             <div class="page-content">
                 <div class="container-fluid">
                     @yield('body')
-
                 </div>
                 <!-- container-fluid -->
             </div>

@@ -271,15 +271,15 @@
                             </ul>
                         </li>
 
-                        {{-- <li>
+                        <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-bitcoin"></i>
-                                <span>Student Module</span>
+                                <span>Enroll Module</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="crypto-wallet.html">Manage Student</a></li>
+                                <li><a href="{{ route('admin.manage-enroll') }}">Manage Enroll</a></li>
                             </ul>
-                        </li> --}}
+                        </li>
 
                     </ul>
                 </div>
