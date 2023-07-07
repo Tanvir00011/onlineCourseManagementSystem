@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Category Add
+@endsection
 @section('body')
 
     <div class="col-lg-12">

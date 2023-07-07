@@ -50,16 +50,17 @@ class TeacherAuthController extends Controller
         return redirect('/teacher/login');
     }
 
-    public function enrolledStudent(){
+    public function enrolledStudent()
+    {
         $enrolls = DB::table('enrolls')
             ->join('courses', function ($join) {
                 $join->on('courses.id', '=', 'enrolls.course_id')
-                     ->where('courses.teacher_id', '=',  Session::get('teacher_id'));
+                    ->where('courses.teacher_id', '=',  Session::get('teacher_id'));
             })
             ->join('students', 'students.id', '=', 'enrolls.student_id')
             ->where('enroll_status', 'approved')
             ->select('enrolls.*', 'courses.title as course_title', 'students.name as student_name')
             ->get();
-        return view('teacher.enroll.enrolledStudent',['enrolls'=>$enrolls]);
+        return view('teacher.enroll.enrolledStudent', ['enrolls' => $enrolls]);
     }
 }

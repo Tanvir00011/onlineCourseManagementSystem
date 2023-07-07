@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Manage Enroll
+@endsection
 @section('body')
 
     <div class="row">
@@ -7,7 +9,7 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">All Enrolled Student</h4>
+                    <h4 class="card-title">Manage Enroll</h4>
 
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <h4 class="text-center text-success">{{session('message')}}</h4>

@@ -1,7 +1,7 @@
 @extends('website.master')
 
 @section('title')
-    Student Dashboard
+    Student Profile
 @endsection
 
 @section('body')

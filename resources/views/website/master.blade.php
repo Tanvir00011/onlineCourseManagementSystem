@@ -98,12 +98,12 @@
                             </a>
 
                         </li>
-                        <li class="nav-item ">
+                        {{-- <li class="nav-item ">
                             <a class="nav-link " href="{{route('about')}}" role="button"  aria-haspopup="true">
                                 About Us
                             </a>
 
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -123,9 +123,9 @@
 
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{route('contact')}}">Contact</a>
-                        </li>
+                        </li> --}}
                         @if(session('student_id'))
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"

@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Course Details
+@endsection
 @section('body')
 
     <div class="row">

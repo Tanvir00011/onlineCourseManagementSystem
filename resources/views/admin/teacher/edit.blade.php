@@ -1,5 +1,7 @@
 @extends('admin.master')
-
+@section('title')
+    Edit Teacher
+@endsection
 @section('body')
 
     <div class="col-lg-12">
