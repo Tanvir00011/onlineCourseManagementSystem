@@ -41,7 +41,7 @@ class HomeController extends Controller
         return view('website.contact.index');
     }
 
-    public function auth()
+    public function auth()//student login screen
     {
         return view('website.auth.index');
     }
