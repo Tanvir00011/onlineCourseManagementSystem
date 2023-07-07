@@ -11,7 +11,7 @@ use Session;
 
 class HomeController extends Controller
 {
-    private $training,$courses,$category, $categories;
+    private $course,$courses,$category, $categories;
     public function index()
     {
         $this->courses = Course::where('status',1)->get();
@@ -27,13 +27,13 @@ class HomeController extends Controller
     {
         $this->category = Category::find($id);
 
-        return view('website.training-category.index',['category'=>$this->category]);
+        return view('website.course-category.index',['category'=>$this->category]);
     }
 
     public function allTraining()
     {
         $this->courses= Course::where('status',1)->get();
-        return view('website.training.index',['courses'=>$this->courses]);
+        return view('website.course.index',['courses'=>$this->courses]);
     }
 
     public function contact()
@@ -47,15 +47,15 @@ class HomeController extends Controller
     }
     public function trainingDetail($id)
     {
-        $this->training = Course::find($id);
+        $this->course = Course::find($id);
         $enrollStatus = Enroll::where(['training_id' => $id,'student_id'=> Session::get('student_id')])->first();
         if(isset($enrollStatus)){//if enrolled show all the courses // else show only video which is free
             $course_materials = CourseMaterial::where(['training_id' => $id])->get();
         }else{
             $course_materials = CourseMaterial::where(['training_id' => $id,'is_free_preview'=>true])->get();
         }
-        return view('website.training.detail',[
-            'training'=>$this->training,
+        return view('website.course.detail',[
+            'course'=>$this->course,
             'enrollStatus' => isset($enrollStatus) ? 1 : 0,
             'course_materials' => $course_materials,
         ]);

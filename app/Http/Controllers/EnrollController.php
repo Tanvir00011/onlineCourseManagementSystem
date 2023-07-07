@@ -34,6 +34,6 @@ class EnrollController extends Controller
 
     public function completeEnroll()
     {
-        return view('website.training.complete-enroll');
+        return view('website.course.complete-enroll');
     }
 }

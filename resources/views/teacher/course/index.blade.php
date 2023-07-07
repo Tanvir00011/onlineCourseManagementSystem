@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">Add Course Form</h4>
                 <h4 class="text-center text-success">{{session('message')}}</h4>
-                <form action="{{route('training.create')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('course.create')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row mb-4">
                         <label  class="col-sm-3 col-form-label">Course Category</label>

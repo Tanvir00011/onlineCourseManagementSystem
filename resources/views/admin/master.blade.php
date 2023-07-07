@@ -267,7 +267,7 @@
                                 <span>Course Module</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('admin.manage-training') }}">Manage Course</a></li>
+                                <li><a href="{{ route('admin.manage-course') }}">Manage Course</a></li>
                             </ul>
                         </li>
 

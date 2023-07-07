@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <h1 class="card-title mb-4 text-center">Update Course Form</h1>
 
-                    <form action="{{route('training.update', ['id' => $training->id])}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('course.update', ['id' => $course->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row mb-4">
@@ -17,7 +17,7 @@
                                 <select class="form-control" required name="category_id">
                                     <option value="" disabled selected> -- Select Course Category -- </option>
                                     @foreach($categories as $category)
-                                        <option value="{{$category->id}}" {{ $category->id == $training->id ? 'selected' : '' }}>{{$category->name}}</option>
+                                        <option value="{{$category->id}}" {{ $category->id == $course->id ? 'selected' : '' }}>{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -26,7 +26,7 @@
                         <div class="form-group row mb-4">
                             <label for="title" class="col-sm-3 col-form-label">Course Title</label>
                             <div class="col-sm-9">
-                                <input type="text" name="title" class="form-control" id="title" value="{{$training->title}}" placeholder="Course Title"/>
+                                <input type="text" name="title" class="form-control" id="title" value="{{$course->title}}" placeholder="Course Title"/>
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@
                             <label for="description" class="col-sm-3 col-form-label">Course Description</label>
                             <div class="col-sm-9">
                                 <textarea name="description" class="form-control summernote" id="description">
-                                     {{$training->description}}
+                                     {{$course->description}}
                                 </textarea>
                             </div>
                         </div>
@@ -42,21 +42,21 @@
                         <div class="form-group row mb-4">
                             <label for="starting_date" class="col-sm-3 col-form-label">Starting Date</label>
                             <div class="col-sm-9">
-                                <input type="date" name="starting_date" class="form-control" id="starting_date" value="{{$training->starting_date}}">
+                                <input type="date" name="starting_date" class="form-control" id="starting_date" value="{{$course->starting_date}}">
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
                             <label for="price" class="col-sm-3 col-form-label">Course Price</label>
                             <div class="col-sm-9">
-                                <input type="number" name="price" class="form-control" id="price" value="{{$training->price}}" placeholder="Enter Course Price">
+                                <input type="number" name="price" class="form-control" id="price" value="{{$course->price}}" placeholder="Enter Course Price">
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
                             <label for="image" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <input type="file" name="image" class="form-control" id="image" value="{{$training->image}}" accept="image/*">
+                                <input type="file" name="image" class="form-control" id="image" value="{{$course->image}}" accept="image/*">
                             </div>
                         </div>
 

@@ -9,12 +9,12 @@ use Session;
 
 class CourseMaterialController extends Controller
 {
-    private $categories, $training,$courses;
+    private $categories, $course,$courses;
 
     public function index($id)
 
     {
-        return view('teacher.training.material.index',['id' => $id]);
+        return view('teacher.course.material.index',['id' => $id]);
     }
 
     public function create(Request $request, $id)
@@ -25,18 +25,18 @@ class CourseMaterialController extends Controller
 
 //    public function manage()
 //    {   $this->courses = Course::where('teacher_id',Session::get('teacher_id'))->get();
-//        return view('teacher.training.manage',['courses'=>$this->courses]);
+//        return view('teacher.course.manage',['courses'=>$this->courses]);
 //    }
 //    public function detail($id)
 //    {
-//        $this->training = Course::find($id);
-//        return view('teacher.training.detail',['training'=>$this->training]);
+//        $this->course = Course::find($id);
+//        return view('teacher.course.detail',['course'=>$this->course]);
 //    }
 //    public function edit($id)
 //    {
 //        $this->categories = Category::all();
-//        $this->training = Course::find($id);
-//        return view('teacher.training.edit', ['training' => $this->training, 'categories' => $this->categories]);
+//        $this->course = Course::find($id);
+//        return view('teacher.course.edit', ['course' => $this->course, 'categories' => $this->categories]);
 //    }
 //    public function update(Request $request, $id)
 //    {
@@ -47,7 +47,7 @@ class CourseMaterialController extends Controller
 //            ]);
 //        }
 //        Course::updateTraining($request, $id);
-//        return redirect('/training/manage')->with('message', 'Course Module Updated Successfully');
+//        return redirect('/course/manage')->with('message', 'Course Module Updated Successfully');
 //    }
 //
 //    public function delete($id)

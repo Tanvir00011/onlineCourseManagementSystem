@@ -1,4 +1,4 @@
-@extends('admin.master')
+@extends('teacher.master')
 
 @section('body')
 
@@ -24,20 +24,26 @@
 
 
                         <tbody>
-                        @foreach($courses as $training)
-                            <tr class="{{$training->status == 1 ? '' : 'bg-warning text-white'}}">
+                        @foreach($courses as $course)
+                            <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$training->title}}</td>
-                                <td>{{$training->starting_date}}</td>
-                                <td>{{$training->price}}</td>
-                                <td>{{$training->status ==1 ? 'published' : 'Unpublished'}}</td>
+                                <td>{{$course->title}}</td>
+                                <td>{{$course->starting_date}}</td>
+                                <td>{{$course->price}}</td>
+                                <td>{{$course->status ==1 ? 'published' : 'Unpublished'}}</td>
                                 <td class="d-flex">
-                                    <a href="{{route('admin.training-detail',['id'=>$training->id])}}" class="btn btn-info btn-sm mr-1">
-                                        <i class="fa fa-book-open"></i>
+                                    <a href="{{route('course.detail',['id'=>$course->id])}}" class="btn btn-info btn-sm mr-1">
+                                        <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="{{route('admin.update-training-status',['id'=>$training->id])}}" class="btn btn-success btn-sm mr-1">
-                                        <i class="fa fa-arrow-circle-up"></i>
+                                    <a href="{{route('course.edit',['id'=>$course->id])}}" class="btn btn-success btn-sm mr-1">
+                                        <i class="fa fa-edit"></i>
                                     </a>
+                                    <form action="{{route('course.delete',['id'=>$course->id])}}" method="POST" onsubmit="return confirm('Are you sure to delete this...')">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

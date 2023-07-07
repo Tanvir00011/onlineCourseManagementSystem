@@ -87,18 +87,18 @@
                     <h5 class="section-title-sm">UpComing Course</h5>
                     <h2 class="section-title section-title-border">Our UpComing Course</h2>
                 </div>
-                @foreach ($courses as $training)
+                @foreach ($courses as $course)
                     <!-- service item -->
                     <div class="col-lg-4 col-sm-6 mb-5">
                         <div class="card text-center">
                             <div class="card-img-wrapper overlay-rounded-top">
-                                <img class="card-img-top rounded-0" src="{{ asset($training->image) }}" alt="service-image"
+                                <img class="card-img-top rounded-0" src="{{ asset($course->image) }}" alt="service-image"
                                     height="250">
                             </div>
                             <div class="card-body p-0">
-                                <h4 class="card-title pt-3">{{ $training->title }}</h4>
-                                <p class="card-text mx-2 mb-0">Starting Date: {{ $training->starting_date }}</p>
-                                <a href="{{ route('training-detail', ['id' => $training->id]) }}"
+                                <h4 class="card-title pt-3">{{ $course->title }}</h4>
+                                <p class="card-text mx-2 mb-0">Starting Date: {{ $course->starting_date }}</p>
+                                <a href="{{ route('course-detail', ['id' => $course->id]) }}"
                                     class="btn btn-secondary translateY-25">Read More</a>
                             </div>
                         </div>

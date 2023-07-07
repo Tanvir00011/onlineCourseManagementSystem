@@ -32,13 +32,13 @@ class CourseMaterial extends Model
         if($request->is_free_preview){
             self:: $trainingMaterial->is_free_preview =true;
         }
-        self:: $trainingMaterial->thumbnail_image = self::getFileUrl($request,'thumbnail_image','training-thumbnail_image');
-        self:: $trainingMaterial->video = self::getFileUrl($request,'video','training-video');
+        self:: $trainingMaterial->thumbnail_image = self::getFileUrl($request,'thumbnail_image','course-thumbnail_image');
+        self:: $trainingMaterial->video = self::getFileUrl($request,'video','course-video');
         self:: $trainingMaterial->save();
     }
 
 
-    public function training()
+    public function course()
     {
         return $this->belongsTo(Course::class);
     }

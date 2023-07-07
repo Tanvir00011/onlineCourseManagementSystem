@@ -10,14 +10,14 @@ class Course extends Model
 {
     use HasFactory;
 
-    private static $training,$image,$imageUrl,$directory,$extension,$imageName,$message;
+    private static $course,$image,$imageUrl,$directory,$extension,$imageName,$message;
 
     public static function getImageUrl($request)
     {
         self::$image = $request->file('image');
         self::$extension = self::$image->getClientOriginalExtension();
         self::$imageName = time().'.'.self::$extension;
-        self::$directory = 'upload/training-images/';
+        self::$directory = 'upload/course-images/';
         self::$image->move(self::$directory,self::$imageName);
         self::$imageUrl = self::$directory.self::$imageName;
         return self::$imageUrl;
@@ -25,52 +25,52 @@ class Course extends Model
 
     public static function NewTraining($request)
     {
-        self:: $training = New Course();
-        self::$training->category_id = $request->category_id;
-        self::$training->teacher_id = Session::get('teacher_id');
-        self:: $training->title = $request->title;
-        self:: $training->description = $request->description;
-        self:: $training->starting_date = $request->starting_date;
-        self:: $training->price = $request->price;
-        self:: $training->image = self::getImageUrl($request);
-        self:: $training->save();
+        self:: $course = New Course();
+        self::$course->category_id = $request->category_id;
+        self::$course->teacher_id = Session::get('teacher_id');
+        self:: $course->title = $request->title;
+        self:: $course->description = $request->description;
+        self:: $course->starting_date = $request->starting_date;
+        self:: $course->price = $request->price;
+        self:: $course->image = self::getImageUrl($request);
+        self:: $course->save();
     }
 
     public static function updateTraining($request,$id)
     {
-        self:: $training = Course::find($id);
+        self:: $course = Course::find($id);
 
         if ($request->file('image'))
         {
-            if (file_exists(self:: $training->image))
+            if (file_exists(self:: $course->image))
             {
-                unlink(self:: $training->image);
+                unlink(self:: $course->image);
             }
             self::$imageUrl = self::getImageUrl($request);
         }
         else
         {
-            self::$imageUrl = self:: $training->image;
+            self::$imageUrl = self:: $course->image;
         }
 
-        self::$training->category_id = $request->category_id;
-        self::$training->teacher_id = Session::get('teacher_id');
-        self:: $training->title = $request->title;
-        self:: $training->description = $request->description;
-        self:: $training->starting_date = $request->starting_date;
-        self:: $training->price = $request->price;
-        self:: $training->image = self::$imageUrl;
-        self:: $training->save();
+        self::$course->category_id = $request->category_id;
+        self::$course->teacher_id = Session::get('teacher_id');
+        self:: $course->title = $request->title;
+        self:: $course->description = $request->description;
+        self:: $course->starting_date = $request->starting_date;
+        self:: $course->price = $request->price;
+        self:: $course->image = self::$imageUrl;
+        self:: $course->save();
     }
 
     public static function deleteTraining($id)
     {
-        self:: $training = Course::find($id);
-        if (file_exists(self:: $training->image))
+        self:: $course = Course::find($id);
+        if (file_exists(self:: $course->image))
         {
-            unlink(self:: $training->image);
+            unlink(self:: $course->image);
         }
-        self:: $training->delete();
+        self:: $course->delete();
     }
 
     public function category()
@@ -83,18 +83,18 @@ class Course extends Model
     }
     public static function UpdateTrainingStatus($id)
     {
-        self::$training = Course::find($id);
-        if(self::$training->status ==1)
+        self::$course = Course::find($id);
+        if(self::$course->status ==1)
         {
-            self::$training->status = 0;
+            self::$course->status = 0;
             self::$message = "Course Status info unpublished Successfully";
         }
         else
         {
-            self::$training->status = 1;
+            self::$course->status = 1;
             self::$message = "Course Status info published Successfully";
         }
-        self::$training->save();
+        self::$course->save();
         return self::$message;
     }
 }

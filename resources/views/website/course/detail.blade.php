@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 class="text-white font-weight-bold">{{ $training->title }}</h2>
+                    <h2 class="text-white font-weight-bold">{{ $course->title }}</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.html">Home</a>
@@ -25,18 +25,18 @@
             <div class="row">
                 <div class="col-lg-8 py-100">
                     <div class="border rounded bg-white">
-                        <img class="img-fluid w-100 rounded-top " src="{{ asset($training->image) }}" alt="blog-image"
+                        <img class="img-fluid w-100 rounded-top " src="{{ asset($course->image) }}" alt="blog-image"
                             style=" height:200px; object-fit: cover">
                         <div class="p-4">
-                            <h3>{{ $training->title }}</h3>
+                            <h3>{{ $course->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
-                                <li class="list-inline-item text-color">Trainer Name:{{ $training->teacher->name }}</li>
+                                <li class="list-inline-item text-color">Trainer Name:{{ $course->teacher->name }}</li>
                                 <li class="list-inline-item text-color">Course Starting
-                                    Date:{{ $training->starting_date }}</li>
-                                <li class="list-inline-item text-color">Course Category:{{ $training->category->name }}
+                                    Date:{{ $course->starting_date }}</li>
+                                <li class="list-inline-item text-color">Course Category:{{ $course->category->name }}
                                 </li>
                             </ul>
-                            <div>{!! $training->description !!}</div>
+                            <div>{!! $course->description !!}</div>
                         </div>
                     </div>
                     <div class="py-4 border-bottom mb-100">
@@ -97,7 +97,7 @@
                         <div>
 
                             @if ($enrollStatus == 0)
-                                <form action="{{ route('training-enroll', ['id' => $training->id]) }}" method="POST"
+                                <form action="{{ route('course-enroll', ['id' => $course->id]) }}" method="POST"
                                     class="row">
                                     @csrf
                                     @if (!Session::has('student_id'))

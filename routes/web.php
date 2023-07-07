@@ -24,13 +24,13 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/about-us',[HomeController::class,'about'])->name('about');
-Route::get('/training-category/{id}',[HomeController::class,'trainingCategory'])->name('training-category');
-Route::get('/all-training',[HomeController::class,'allTraining'])->name('all-training');
-Route::get('/training-detail/{id}',[HomeController::class,'trainingDetail'])->name('training-detail');
+Route::get('/course-category/{id}',[HomeController::class,'trainingCategory'])->name('course-category');
+Route::get('/all-course',[HomeController::class,'allTraining'])->name('all-course');
+Route::get('/course-detail/{id}',[HomeController::class,'trainingDetail'])->name('course-detail');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/login-registration',[HomeController::class,'auth'])->name('login-registration');
 
-Route::post('/training-enroll/{id}',[EnrollController::class,'newEnroll'])->name('training-enroll');
+Route::post('/course-enroll/{id}',[EnrollController::class,'newEnroll'])->name('course-enroll');
 Route::get('/complete-enroll',[EnrollController::class,'completeEnroll'])->name('complete-enroll');
 
 Route::post('/student-login',[StudentController::class,'login'])->name('student-login');
@@ -46,22 +46,22 @@ Route::middleware(['teacher.auth'])->group(function (){
     Route::get('/teacher/dashboard',[TeacherAuthController::class,'dashboard'])->name('teacher.dashboard');
     Route::post('/teacher/logout',[TeacherAuthController::class,'logout'])->name('teacher.logout');
 
-    Route::get('/training/add',[CourseController::class,'index'])->name('training.add');
-    Route::post('/training/create',[CourseController::class,'create'])->name('training.create');
-    Route::get('/training/manage',[CourseController::class,'manage'])->name('training.manage');
-    Route::get('/training/detail/{id}',[CourseController::class,'detail'])->name('training.detail');
-    Route::get('/training/edit/{id}',[CourseController::class,'edit'])->name('training.edit');
-    Route::post('/training/update/{id}',[CourseController::class,'update'])->name('training.update');
-    Route::post('/training/delete/{id}',[CourseController::class,'delete'])->name('training.delete');
+    Route::get('/course/add',[CourseController::class,'index'])->name('course.add');
+    Route::post('/course/create',[CourseController::class,'create'])->name('course.create');
+    Route::get('/course/manage',[CourseController::class,'manage'])->name('course.manage');
+    Route::get('/course/detail/{id}',[CourseController::class,'detail'])->name('course.detail');
+    Route::get('/course/edit/{id}',[CourseController::class,'edit'])->name('course.edit');
+    Route::post('/course/update/{id}',[CourseController::class,'update'])->name('course.update');
+    Route::post('/course/delete/{id}',[CourseController::class,'delete'])->name('course.delete');
 
     //Course Material
-    Route::get('/training/{id}/material/add',[CourseMaterialController::class,'index'])->name('training.material.add');
-    Route::post('/training-material/{id}/create',[CourseMaterialController::class,'create'])->name('training.material.create');
-//    Route::get('/training-material/manage',[CourseMaterialController::class,'manage'])->name('training.material.manage');
-//    Route::get('/training-material/detail/{id}',[CourseMaterialController::class,'detail'])->name('training.material.detail');
-//    Route::get('/training-material/edit/{id}',[CourseMaterialController::class,'edit'])->name('training.material.edit');
-//    Route::post('/training-material/update/{id}',[CourseMaterialController::class,'update'])->name('training.material.update');
-//    Route::post('/training-material/delete/{id}',[CourseMaterialController::class,'delete'])->name('training.material.delete');
+    Route::get('/course/{id}/material/add',[CourseMaterialController::class,'index'])->name('course.material.add');
+    Route::post('/course-material/{id}/create',[CourseMaterialController::class,'create'])->name('course.material.create');
+//    Route::get('/course-material/manage',[CourseMaterialController::class,'manage'])->name('course.material.manage');
+//    Route::get('/course-material/detail/{id}',[CourseMaterialController::class,'detail'])->name('course.material.detail');
+//    Route::get('/course-material/edit/{id}',[CourseMaterialController::class,'edit'])->name('course.material.edit');
+//    Route::post('/course-material/update/{id}',[CourseMaterialController::class,'update'])->name('course.material.update');
+//    Route::post('/course-material/delete/{id}',[CourseMaterialController::class,'delete'])->name('course.material.delete');
 
 
 });
@@ -85,7 +85,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/category/update/{id}',[CategoryController::class,'update'] )->name('category.update');
     Route::post('/category/delete/{id}',[CategoryController::class,'delete'] )->name('category.delete');
 
-    Route::get('/admin/manage-training',[AdminCourseController::class,'index'] )->name('admin.manage-training');
-    Route::get('/admin/training-detail/{id}',[AdminCourseController::class,'detail'] )->name('admin.training-detail');
-    Route::get('/admin/update-training-status/{id}',[AdminCourseController::class,'updateStatus'] )->name('admin.update-training-status');
+    Route::get('/admin/manage-course',[AdminCourseController::class,'index'] )->name('admin.manage-course');
+    Route::get('/admin/course-detail/{id}',[AdminCourseController::class,'detail'] )->name('admin.course-detail');
+    Route::get('/admin/update-course-status/{id}',[AdminCourseController::class,'updateStatus'] )->name('admin.update-course-status');
 });

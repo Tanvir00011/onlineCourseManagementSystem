@@ -112,12 +112,12 @@
                             </a>
                             <div class="dropdown-menu" >
                                 @foreach($categories as $category)
-                                <a class="dropdown-item" href="{{route('training-category',['id'=>$category->id])}}">{{$category->name}}</a>
+                                <a class="dropdown-item" href="{{route('course-category',['id'=>$category->id])}}">{{$category->name}}</a>
                                 @endforeach
                             </div>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link " href="{{route('all-training')}}" role="button"  aria-haspopup="true">
+                            <a class="nav-link " href="{{route('all-course')}}" role="button"  aria-haspopup="true">
                                 All Course
                             </a>
 
