@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Session;
 
-class TrainingsMaterial extends Model
+class CourseMaterial extends Model
 {
     use HasFactory;
 
@@ -25,7 +25,7 @@ class TrainingsMaterial extends Model
 
     public static function NewTrainingMaterial($request, $training_id)
     {
-        self:: $trainingMaterial = New TrainingsMaterial();
+        self:: $trainingMaterial = New CourseMaterial();
         self::$trainingMaterial->teacher_id = Session::get('teacher_id');
         self::$trainingMaterial->training_id = $training_id;
         self:: $trainingMaterial->title = $request->title;

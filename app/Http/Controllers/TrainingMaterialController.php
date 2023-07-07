@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
-use App\Models\TrainingsMaterial;
+use App\Models\CourseMaterial;
 use Illuminate\Http\Request;
 use Session;
 
@@ -19,7 +19,7 @@ class TrainingMaterialController extends Controller
 
     public function create(Request $request, $id)
     {
-        TrainingsMaterial::NewTrainingMaterial($request, $id);
+        CourseMaterial::NewTrainingMaterial($request, $id);
         return back()->with('message','Course Info Created Successfully');
     }
 
