@@ -7,7 +7,7 @@ use App\Models\Course;
 use Illuminate\Http\Request;
 use Session;
 
-class TrainingController extends Controller
+class CourseController extends Controller
 {
     private $categories, $training,$trainings;
 

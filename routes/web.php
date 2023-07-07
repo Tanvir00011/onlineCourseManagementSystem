@@ -5,10 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashBoardController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherAuthController;
-use App\Http\Controllers\TrainingController;
-use App\Http\Controllers\TrainingMaterialController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseMaterialController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\AdminTrainingController;
+use App\Http\Controllers\AdminCourseController;
 use App\Http\Controllers\EnrollController;
 use App\Http\Controllers\StudentController;
 /*
@@ -46,22 +46,22 @@ Route::middleware(['teacher.auth'])->group(function (){
     Route::get('/teacher/dashboard',[TeacherAuthController::class,'dashboard'])->name('teacher.dashboard');
     Route::post('/teacher/logout',[TeacherAuthController::class,'logout'])->name('teacher.logout');
 
-    Route::get('/training/add',[TrainingController::class,'index'])->name('training.add');
-    Route::post('/training/create',[TrainingController::class,'create'])->name('training.create');
-    Route::get('/training/manage',[TrainingController::class,'manage'])->name('training.manage');
-    Route::get('/training/detail/{id}',[TrainingController::class,'detail'])->name('training.detail');
-    Route::get('/training/edit/{id}',[TrainingController::class,'edit'])->name('training.edit');
-    Route::post('/training/update/{id}',[TrainingController::class,'update'])->name('training.update');
-    Route::post('/training/delete/{id}',[TrainingController::class,'delete'])->name('training.delete');
+    Route::get('/training/add',[CourseController::class,'index'])->name('training.add');
+    Route::post('/training/create',[CourseController::class,'create'])->name('training.create');
+    Route::get('/training/manage',[CourseController::class,'manage'])->name('training.manage');
+    Route::get('/training/detail/{id}',[CourseController::class,'detail'])->name('training.detail');
+    Route::get('/training/edit/{id}',[CourseController::class,'edit'])->name('training.edit');
+    Route::post('/training/update/{id}',[CourseController::class,'update'])->name('training.update');
+    Route::post('/training/delete/{id}',[CourseController::class,'delete'])->name('training.delete');
 
     //Course Material
-    Route::get('/training/{id}/material/add',[TrainingMaterialController::class,'index'])->name('training.material.add');
-    Route::post('/training-material/{id}/create',[TrainingMaterialController::class,'create'])->name('training.material.create');
-//    Route::get('/training-material/manage',[TrainingMaterialController::class,'manage'])->name('training.material.manage');
-//    Route::get('/training-material/detail/{id}',[TrainingMaterialController::class,'detail'])->name('training.material.detail');
-//    Route::get('/training-material/edit/{id}',[TrainingMaterialController::class,'edit'])->name('training.material.edit');
-//    Route::post('/training-material/update/{id}',[TrainingMaterialController::class,'update'])->name('training.material.update');
-//    Route::post('/training-material/delete/{id}',[TrainingMaterialController::class,'delete'])->name('training.material.delete');
+    Route::get('/training/{id}/material/add',[CourseMaterialController::class,'index'])->name('training.material.add');
+    Route::post('/training-material/{id}/create',[CourseMaterialController::class,'create'])->name('training.material.create');
+//    Route::get('/training-material/manage',[CourseMaterialController::class,'manage'])->name('training.material.manage');
+//    Route::get('/training-material/detail/{id}',[CourseMaterialController::class,'detail'])->name('training.material.detail');
+//    Route::get('/training-material/edit/{id}',[CourseMaterialController::class,'edit'])->name('training.material.edit');
+//    Route::post('/training-material/update/{id}',[CourseMaterialController::class,'update'])->name('training.material.update');
+//    Route::post('/training-material/delete/{id}',[CourseMaterialController::class,'delete'])->name('training.material.delete');
 
 
 });
@@ -85,7 +85,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('/category/update/{id}',[CategoryController::class,'update'] )->name('category.update');
     Route::post('/category/delete/{id}',[CategoryController::class,'delete'] )->name('category.delete');
 
-    Route::get('/admin/manage-training',[AdminTrainingController::class,'index'] )->name('admin.manage-training');
-    Route::get('/admin/training-detail/{id}',[AdminTrainingController::class,'detail'] )->name('admin.training-detail');
-    Route::get('/admin/update-training-status/{id}',[AdminTrainingController::class,'updateStatus'] )->name('admin.update-training-status');
+    Route::get('/admin/manage-training',[AdminCourseController::class,'index'] )->name('admin.manage-training');
+    Route::get('/admin/training-detail/{id}',[AdminCourseController::class,'detail'] )->name('admin.training-detail');
+    Route::get('/admin/update-training-status/{id}',[AdminCourseController::class,'updateStatus'] )->name('admin.update-training-status');
 });

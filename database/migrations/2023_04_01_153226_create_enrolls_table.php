@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('enrolls', function (Blueprint $table) {
             $table->id();
-            $table->integer('training_id');
+            $table->integer('course_id');
             $table->integer('student_id');
             $table->text('enroll_date');
             $table->string('enroll_status')->default('pending');

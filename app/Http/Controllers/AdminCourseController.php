@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use Illuminate\Http\Request;
 
-class AdminTrainingController extends Controller
+class AdminCourseController extends Controller
 {
     private $training,$trainings,$message;
     public function index()

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trainings', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->integer('category_id');
             $table->integer('teacher_id');
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('starting_date');
             $table->integer('price');
             $table->text('image');
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trainings');
+        Schema::dropIfExists('courses');
     }
 };
