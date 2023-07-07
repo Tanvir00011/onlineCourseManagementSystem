@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\Teacher;
-use App\Models\Training;
+use App\Models\Course;
 use Illuminate\Http\Request;
 use Session;
 
@@ -36,8 +36,8 @@ class TeacherAuthController extends Controller
 
     public function dashboard()
     {
-        $publishedCourseCount = Training::where('status', 1)->where('teacher_id',  Session::get('teacher_id'))->count();
-        $unpublishedCourseCount = Training::where('status', 0)->where('teacher_id',  Session::get('teacher_id'))->count();
+        $publishedCourseCount = Course::where('status', 1)->where('teacher_id',  Session::get('teacher_id'))->count();
+        $unpublishedCourseCount = Course::where('status', 0)->where('teacher_id',  Session::get('teacher_id'))->count();
         return view('teacher.dashboard.index',  ['unpublishedCourseCount' => $unpublishedCourseCount, 'publishedCourseCount' => $publishedCourseCount]);
     }
 

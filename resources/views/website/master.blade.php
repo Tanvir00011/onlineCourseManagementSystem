@@ -108,7 +108,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false">
-                               Training Category
+                               Course Category
                             </a>
                             <div class="dropdown-menu" >
                                 @foreach($categories as $category)
@@ -118,7 +118,7 @@
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link " href="{{route('all-training')}}" role="button"  aria-haspopup="true">
-                                All Training
+                                All Course
                             </a>
 
                         </li>

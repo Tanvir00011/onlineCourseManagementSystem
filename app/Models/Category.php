@@ -63,6 +63,6 @@ class Category extends Model
     }
     public function trainings()
     {
-        return $this->hasmany(Training::class);
+        return $this->hasmany(Course::class);
     }
 }

@@ -12,7 +12,7 @@
                         <li>
                             <a href="index.html">Home</a>
                         </li>
-                        <li>Training Single</li>
+                        <li>Course Single</li>
                     </ol>
                 </div>
             </div>
@@ -31,9 +31,9 @@
                             <h3>{{ $training->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
                                 <li class="list-inline-item text-color">Trainer Name:{{ $training->teacher->name }}</li>
-                                <li class="list-inline-item text-color">Training Starting
+                                <li class="list-inline-item text-color">Course Starting
                                     Date:{{ $training->starting_date }}</li>
-                                <li class="list-inline-item text-color">Training Category:{{ $training->category->name }}
+                                <li class="list-inline-item text-color">Course Category:{{ $training->category->name }}
                                 </li>
                             </ul>
                             <div>{!! $training->description !!}</div>

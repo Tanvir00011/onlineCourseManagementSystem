@@ -5,15 +5,15 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Add Training Form</h4>
+                <h4 class="card-title mb-4">Add Course Form</h4>
                 <h4 class="text-center text-success">{{session('message')}}</h4>
                 <form action="{{route('training.create')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row mb-4">
-                        <label  class="col-sm-3 col-form-label">Training Category</label>
+                        <label  class="col-sm-3 col-form-label">Course Category</label>
                         <div class="col-sm-9">
                             <select class="form-control" required name="category_id">
-                            <option value="" disabled selected>--Select Training Category--</option>
+                            <option value="" disabled selected>--Select Course Category--</option>
                             @foreach($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group row mb-4">
-                        <label  class="col-sm-3 col-form-label">Training Title</label>
+                        <label  class="col-sm-3 col-form-label">Course Title</label>
                         <div class="col-sm-9">
                             <input type="text" name="title" class="form-control ">
                         </div>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="form-group row mb-4">
-                        <label class="col-sm-3 col-form-label">Training Price</label>
+                        <label class="col-sm-3 col-form-label">Course Price</label>
                         <div class="col-sm-9">
                             <input type="number" name="price" class="form-control">
                         </div>
@@ -55,7 +55,7 @@
                         <div class="col-sm-9">
 
                             <div>
-                                <button type="submit" class="btn btn-primary w-md">Create New Training</button>
+                                <button type="submit" class="btn btn-primary w-md">Create New Course</button>
                             </div>
                         </div>
                     </div>

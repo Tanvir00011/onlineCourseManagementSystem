@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Enroll;
-use App\Models\Training;
+use App\Models\Course;
 use App\Models\TrainingsMaterial;
 use Illuminate\Http\Request;
 use Session;
@@ -14,7 +14,7 @@ class HomeController extends Controller
     private $training,$trainings,$category, $categories;
     public function index()
     {
-        $this->trainings = Training::where('status',1)->get();
+        $this->trainings = Course::where('status',1)->get();
         return view('website.home.index',['trainings'=>$this->trainings]);
     }
 
@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     public function allTraining()
     {
-        $this->trainings= Training::where('status',1)->get();
+        $this->trainings= Course::where('status',1)->get();
         return view('website.training.index',['trainings'=>$this->trainings]);
     }
 
@@ -47,7 +47,7 @@ class HomeController extends Controller
     }
     public function trainingDetail($id)
     {
-        $this->training = Training::find($id);
+        $this->training = Course::find($id);
         $enrollStatus = Enroll::where(['training_id' => $id,'student_id'=> Session::get('student_id')])->first();
         if(isset($enrollStatus)){//if enrolled show all the courses // else show only video which is free
             $course_materials = TrainingsMaterial::where(['training_id' => $id])->get();

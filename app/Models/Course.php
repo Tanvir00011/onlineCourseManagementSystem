@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Session;
 
-class Training extends Model
+class Course extends Model
 {
     use HasFactory;
 
@@ -25,7 +25,7 @@ class Training extends Model
 
     public static function NewTraining($request)
     {
-        self:: $training = New Training();
+        self:: $training = New Course();
         self::$training->category_id = $request->category_id;
         self::$training->teacher_id = Session::get('teacher_id');
         self:: $training->title = $request->title;
@@ -38,7 +38,7 @@ class Training extends Model
 
     public static function updateTraining($request,$id)
     {
-        self:: $training = Training::find($id);
+        self:: $training = Course::find($id);
 
         if ($request->file('image'))
         {
@@ -65,7 +65,7 @@ class Training extends Model
 
     public static function deleteTraining($id)
     {
-        self:: $training = Training::find($id);
+        self:: $training = Course::find($id);
         if (file_exists(self:: $training->image))
         {
             unlink(self:: $training->image);
@@ -83,16 +83,16 @@ class Training extends Model
     }
     public static function UpdateTrainingStatus($id)
     {
-        self::$training = Training::find($id);
+        self::$training = Course::find($id);
         if(self::$training->status ==1)
         {
             self::$training->status = 0;
-            self::$message = "Training Status info unpublished Successfully";
+            self::$message = "Course Status info unpublished Successfully";
         }
         else
         {
             self::$training->status = 1;
-            self::$message = "Training Status info published Successfully";
+            self::$message = "Course Status info published Successfully";
         }
         self::$training->save();
         return self::$message;

@@ -13,7 +13,7 @@
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{route('my-dashboard')}}">My Dashboard</a></li>
                             <li class="list-group-item"><a href="{{route('my-profile')}}">My Profile</a></li>
-                            <li class="list-group-item"><a href="">My Training</a></li>
+                            <li class="list-group-item"><a href="">My Course</a></li>
                             <li class="list-group-item"><a href="">Change password</a></li>
                             <li class="list-group-item"><a href="{{route('student-logout')}}">Logout</a></li>
                         </ul>

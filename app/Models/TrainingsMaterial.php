@@ -40,20 +40,20 @@ class TrainingsMaterial extends Model
 
     public function training()
     {
-        return $this->belongsTo(Training::class);
+        return $this->belongsTo(Course::class);
     }
     public static function UpdateTrainingStatus($id)
     {
-        self::$trainingMaterial = Training::find($id);
+        self::$trainingMaterial = Course::find($id);
         if(self::$trainingMaterial->status ==1)
         {
             self::$trainingMaterial->status = 0;
-            self::$message = "Training Status info unpublished Successfully";
+            self::$message = "Course Status info unpublished Successfully";
         }
         else
         {
             self::$trainingMaterial->status = 1;
-            self::$message = "Training Status info published Successfully";
+            self::$message = "Course Status info published Successfully";
         }
         self::$trainingMaterial->save();
         return self::$message;

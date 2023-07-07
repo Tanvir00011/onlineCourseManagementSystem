@@ -6,16 +6,16 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title mb-4 text-center">Update Training Form</h1>
+                    <h1 class="card-title mb-4 text-center">Update Course Form</h1>
 
                     <form action="{{route('training.update', ['id' => $training->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row mb-4">
-                            <label for="teacher_id" class="col-sm-3 col-form-label">Training Category</label>
+                            <label for="teacher_id" class="col-sm-3 col-form-label">Course Category</label>
                             <div class="col-sm-9">
                                 <select class="form-control" required name="category_id">
-                                    <option value="" disabled selected> -- Select Training Category -- </option>
+                                    <option value="" disabled selected> -- Select Course Category -- </option>
                                     @foreach($categories as $category)
                                         <option value="{{$category->id}}" {{ $category->id == $training->id ? 'selected' : '' }}>{{$category->name}}</option>
                                     @endforeach
@@ -24,14 +24,14 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label for="title" class="col-sm-3 col-form-label">Training Title</label>
+                            <label for="title" class="col-sm-3 col-form-label">Course Title</label>
                             <div class="col-sm-9">
-                                <input type="text" name="title" class="form-control" id="title" value="{{$training->title}}" placeholder="Training Title"/>
+                                <input type="text" name="title" class="form-control" id="title" value="{{$training->title}}" placeholder="Course Title"/>
                             </div>
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label for="description" class="col-sm-3 col-form-label">Training Description</label>
+                            <label for="description" class="col-sm-3 col-form-label">Course Description</label>
                             <div class="col-sm-9">
                                 <textarea name="description" class="form-control summernote" id="description">
                                      {{$training->description}}
@@ -47,9 +47,9 @@
                         </div>
 
                         <div class="form-group row mb-4">
-                            <label for="price" class="col-sm-3 col-form-label">Training Price</label>
+                            <label for="price" class="col-sm-3 col-form-label">Course Price</label>
                             <div class="col-sm-9">
-                                <input type="number" name="price" class="form-control" id="price" value="{{$training->price}}" placeholder="Enter Training Price">
+                                <input type="number" name="price" class="form-control" id="price" value="{{$training->price}}" placeholder="Enter Course Price">
                             </div>
                         </div>
 
@@ -63,7 +63,7 @@
                         <div class="form-group row justify-content-end">
                             <div class="col-sm-9">
                                 <div>
-                                    <button type="submit" class="btn btn-primary w-md">Update Training Module</button>
+                                    <button type="submit" class="btn btn-primary w-md">Update Course Module</button>
                                 </div>
                             </div>
                         </div>

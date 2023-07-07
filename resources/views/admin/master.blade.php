@@ -264,10 +264,10 @@
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="bx bx-store"></i>
-                                <span>Training Module</span>
+                                <span>Course Module</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{ route('admin.manage-training') }}">Manage Training</a></li>
+                                <li><a href="{{ route('admin.manage-training') }}">Manage Course</a></li>
                             </ul>
                         </li>
 

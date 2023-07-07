@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Training;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class AdminTrainingController extends Controller
@@ -10,19 +10,19 @@ class AdminTrainingController extends Controller
     private $training,$trainings,$message;
     public function index()
     {
-        $this->trainings = Training::all();
+        $this->trainings = Course::all();
         return view('admin.training.manage',['trainings'=>$this->trainings]);
     }
 
     public function detail($id)
     {
-        $this->training = Training::find($id);
+        $this->training = Course::find($id);
         return view('admin.training.detail',['training'=>$this->training]);
     }
 
     public function updateStatus($id)
     {
-        $this->message= Training::UpdateTrainingStatus($id);
+        $this->message= Course::UpdateTrainingStatus($id);
         return back()->with('message',$this->message);
 
     }

@@ -84,8 +84,8 @@
         <div class="container">
             <div class="row ">
                 <div class="col-12 text-center">
-                    <h5 class="section-title-sm">UpComing Training</h5>
-                    <h2 class="section-title section-title-border">Our UpComing Training</h2>
+                    <h5 class="section-title-sm">UpComing Course</h5>
+                    <h2 class="section-title section-title-border">Our UpComing Course</h2>
                 </div>
                 @foreach ($trainings as $training)
                     <!-- service item -->

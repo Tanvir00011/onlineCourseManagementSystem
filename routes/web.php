@@ -54,7 +54,7 @@ Route::middleware(['teacher.auth'])->group(function (){
     Route::post('/training/update/{id}',[TrainingController::class,'update'])->name('training.update');
     Route::post('/training/delete/{id}',[TrainingController::class,'delete'])->name('training.delete');
 
-    //Training Material
+    //Course Material
     Route::get('/training/{id}/material/add',[TrainingMaterialController::class,'index'])->name('training.material.add');
     Route::post('/training-material/{id}/create',[TrainingMaterialController::class,'create'])->name('training.material.create');
 //    Route::get('/training-material/manage',[TrainingMaterialController::class,'manage'])->name('training.material.manage');
