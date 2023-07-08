@@ -96,7 +96,7 @@
                         <!-- comment form -->
                         <div>
 
-                            @if ($enrollStatus == 0)
+                            @if ($is_enrolled == 0)
                                 <form action="{{ route('course-enroll', ['id' => $course->id]) }}" method="POST"
                                     class="row">
                                     @csrf
@@ -132,7 +132,7 @@
                                     </div>
                                 </form>
                             @else
-                                <button type="button" class="btn btn-success disabled">Already Enrolled</button>
+                                <button type="button" class="btn {{$enroll_status=='approved'?'btn-success':($enroll_status=='rejected'?'btn-danger':'btn-warning' )}} disabled">{{$enroll_status}}</button>
                             @endif
                         </div>
                     </div>

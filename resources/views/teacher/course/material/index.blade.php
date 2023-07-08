@@ -11,7 +11,7 @@
                     @csrf
 
                     <div class="form-group row mb-4">
-                        <label  class="col-sm-3 col-form-label">Title</label>
+                        <label  class="col-sm-3 col-form-label">Title <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
                             <input type="text" name="title" class="form-control " required>
                         </div>
@@ -19,16 +19,16 @@
 
 
                     <div class="form-group row mb-4">
-                        <label class="col-sm-3 col-form-label">Video</label>
+                        <label class="col-sm-3 col-form-label">Video <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
                             <input type="file" name="video" class="form-control-file" required accept="video/*"/>
                         </div>
                     </div>
 
                     <div class="form-group row mb-4">
-                        <label class="col-sm-3 col-form-label">Thumbnail Image</label>
+                        <label class="col-sm-3 col-form-label">Thumbnail Image <span class="text-danger">*</span></label>
                         <div class="col-sm-9">
-                            <input type="file" name="thumbnail_image" class="form-control-file" accept="image/*"/>
+                            <input type="file" name="thumbnail_image" class="form-control-file" accept="image/*" required/>
                         </div>
                     </div>
                     <div class="form-group row mb-4">

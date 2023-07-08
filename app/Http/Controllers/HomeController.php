@@ -48,15 +48,16 @@ class HomeController extends Controller
     public function courseDetail($id)
     {
         $this->course = Course::find($id);
-        $enrollStatus = Enroll::where(['course_id' => $id,'student_id'=> Session::get('student_id')])->first();
-        if(isset($enrollStatus)){//if enrolled show all the courses // else show only video which is free
+        $enroll = Enroll::where(['course_id' => $id,'student_id'=> Session::get('student_id')])->first();
+        if(isset($enroll)&&$enroll->enroll_status=='approved'){//if enrolled show all the courses // else show only video which is free
             $course_materials = CourseMaterial::where(['course_id' => $id])->get();
         }else{
             $course_materials = CourseMaterial::where(['course_id' => $id,'is_free_preview'=>true])->get();
         }
         return view('website.course.detail',[
             'course'=>$this->course,
-            'enrollStatus' => isset($enrollStatus) ? 1 : 0,
+            'is_enrolled' => isset($enroll) ? 1 : 0,
+            'enroll_status' =>  isset($enroll)?$enroll->enroll_status:'',
             'course_materials' => $course_materials,
         ]);
     }

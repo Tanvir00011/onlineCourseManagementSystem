@@ -31,7 +31,9 @@ class StudentController extends Controller
 
     public function course()
     {
-        return view('website.student.course');
+        $student_id = Session::get('student_id');
+        $allEnrolledCourse = Enroll::where('student_id', $student_id)->get();
+        return view('website.student.course')->with('allEnrolledCourse', $allEnrolledCourse);
     }
 
     public function logout()
