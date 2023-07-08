@@ -8,8 +8,7 @@
     <section>
         <div class="position-relative">
             <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('/') }}website/images/banner/21421.jpg);"
-                data-text="Consultation">
+                style="background-image: url({{ asset('/') }}website/images/banner/21421.jpg);" data-text="Consultation">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -96,7 +95,11 @@
                                     height="250" style="object-fit: cover">
                             </div>
                             <div class="card-body p-0">
-                                <h4 class="card-title pt-3">{{ $course->title }}</h4>
+                                <h4 class="card-title pt-3 px-3"
+                                    style="overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;">
+                                    {{ $course->title }}</h4>
                                 <p class="card-text mx-2 mb-0">Starting Date: {{ $course->starting_date }}</p>
                                 <a href="{{ route('course-detail', ['id' => $course->id]) }}"
                                     class="btn btn-secondary translateY-25">Read More</a>
