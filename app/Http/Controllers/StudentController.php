@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enroll;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Session;
@@ -13,12 +14,24 @@ class StudentController extends Controller
 
     public function dashboard()
     {
-        return view('website.student.dashboard');
+        $student_id = Session::get('student_id');
+        $enrolled_course = Enroll::where('student_id', $student_id)->where('payment_status', 'approved')->count();
+        $pending_course = Enroll::where('student_id', $student_id)->where('payment_status', 'pending')->count();
+        $rejected_course = Enroll::where('student_id', $student_id)->where('payment_status', 'rejected')->count();
+        return view('website.student.dashboard')
+                ->with('enrolled_course',$enrolled_course)
+                ->with('pending_course',$pending_course)
+                ->with('rejected_course',$rejected_course);
     }
 
     public function profile()
     {
         return view('website.student.profile');
+    }
+
+    public function course()
+    {
+        return view('website.student.course');
     }
 
     public function logout()

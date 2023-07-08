@@ -12,10 +12,9 @@
                     <div class="card card-body">
                         <ul class="list-group">
                             <li class="list-group-item"><a href="{{ route('my-dashboard') }}">My Dashboard</a></li>
-                            <li class="list-group-item"><a class="text-secondary" href="{{ route('my-profile') }}">My
-                                    Profile</a></li>
-                            <li class="list-group-item"><a class="text-secondary" href="">My Course</a></li>
-                            <li class="list-group-item"><a class="text-secondary" href="">Change password</a></li>
+                            {{-- <li class="list-group-item"><a class="text-secondary" href="{{ route('my-profile') }}">My
+                                    Profile</a></li> --}}
+                            <li class="list-group-item"><a class="text-secondary" href="{{ route('my-course') }}">My Course</a></li>
                             <li class="list-group-item"><a class="text-secondary"
                                     href="{{ route('student-logout') }}">Logout</a></li>
                         </ul>
@@ -26,16 +25,16 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6 mb-2">
                                         <div class="card mini-stats-wid">
                                             <div class="card-body">
                                                 <div class="media">
                                                     <div class="media-body">
-                                                        <p class="text-muted font-weight-medium">Published Course</p>
-                                                        <h4 class="mb-0">{{"2"}}</h4>
+                                                        <p class="text-muted font-weight-medium">Enrolled Course</p>
+                                                        <h4 class="mb-0">{{$enrolled_course}}</h4>
                                                     </div>
                                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                                        <span class="avatar-title">
+                                                        <span class="avatar-title  bg-success">
                                                             <i class="bx bx-copy-alt font-size-24"></i>
                                                         </span>
                                                     </div>
@@ -43,16 +42,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6 mb-2">
                                         <div class="card mini-stats-wid">
                                             <div class="card-body">
                                                 <div class="media">
                                                     <div class="media-body">
-                                                        <p class="text-muted font-weight-medium">Unpublished Course</p>
-                                                        <h4 class="mb-0">{{"1"}}</h4>
+                                                        <p class="text-muted font-weight-medium">Pending Course</p>
+                                                        <h4 class="mb-0">{{$pending_course}}</h4>
                                                     </div>
                                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                                        <span class="avatar-title">
+                                                        <span class="avatar-title  bg-warning">
                                                             <i class="bx bx-copy-alt font-size-24"></i>
                                                         </span>
                                                     </div>
@@ -61,6 +60,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-6 mb-2">
+                                        <div class="card mini-stats-wid">
+                                            <div class="card-body">
+                                                <div class="media">
+                                                    <div class="media-body">
+                                                        <p class="text-muted font-weight-medium">Reject Course</p>
+                                                        <h4 class="mb-0">{{$rejected_course}}</h4>
+                                                    </div>
+                                                    <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                                                        <span class="avatar-title  bg-danger">
+                                                            <i class="bx bx-copy-alt font-size-24"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- end row -->
 

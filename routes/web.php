@@ -37,6 +37,7 @@ Route::post('/student-login',[StudentController::class,'login'])->name('student-
 Route::post('/student-register',[StudentController::class,'register'])->name('student-register');
 Route::get('/my-dashboard',[StudentController::class,'dashboard'])->name('my-dashboard');
 Route::get('/my-profile',[StudentController::class,'profile'])->name('my-profile');
+Route::get('/my-course',[StudentController::class,'course'])->name('my-course');
 Route::get('/logout',[StudentController::class,'logout'])->name('student-logout');
 
 Route::get('/teacher/login',[TeacherAuthController::class,'index'])->name('teacher.login');

@@ -14,7 +14,7 @@
                             <li class="list-group-item"><a class="text-secondary" href="{{ route('my-dashboard') }}">My Dashboard</a></li>
                             {{-- <li class="list-group-item"><a  href="{{ route('my-profile') }}">My
                                     Profile</a></li> --}}
-                            <li class="list-group-item"><a class="text-secondary" href="{{ route('my-course') }}">My Course</a></li>
+                            <li class="list-group-item"><a href="">My Course</a></li>
                             <li class="list-group-item"><a class="text-secondary"
                                     href="{{ route('student-logout') }}">Logout</a></li>
                         </ul>
