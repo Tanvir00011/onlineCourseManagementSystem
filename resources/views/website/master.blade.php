@@ -42,7 +42,7 @@
     <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
 
 <!-- preloader start -->
@@ -171,12 +171,12 @@
     </div>
 </div>
 <!-- /navigation -->
-
 @yield('body')
+
 <!-- footer -->
-<footer class="bg-secondary">
+<footer class="bg-secondary mt-auto">
     <!-- copyright -->
-    <div class="pt-4 pb-3 position-relative">
+    <div class="pt-4 py-3 pb-3 position-relative">
         <div class="container">
             <div class="row">
 

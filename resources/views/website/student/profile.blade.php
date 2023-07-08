@@ -11,11 +11,13 @@
                 <div class="col-md-3">
                     <div class="card card-body">
                         <ul class="list-group">
-                            <li class="list-group-item"><a href="{{route('my-dashboard')}}">My Dashboard</a></li>
-                            <li class="list-group-item"><a href="{{route('my-profile')}}">My Profile</a></li>
-                            <li class="list-group-item"><a href="">My Course</a></li>
-                            <li class="list-group-item"><a href="">Change password</a></li>
-                            <li class="list-group-item"><a href="{{route('student-logout')}}">Logout</a></li>
+                            <li class="list-group-item"><a class="text-secondary" href="{{ route('my-dashboard') }}">My Dashboard</a></li>
+                            <li class="list-group-item"><a  href="{{ route('my-profile') }}">My
+                                    Profile</a></li>
+                            <li class="list-group-item"><a class="text-secondary" href="">My Course</a></li>
+                            <li class="list-group-item"><a class="text-secondary" href="">Change password</a></li>
+                            <li class="list-group-item"><a class="text-secondary"
+                                    href="{{ route('student-logout') }}">Logout</a></li>
                         </ul>
                     </div>
                 </div>
