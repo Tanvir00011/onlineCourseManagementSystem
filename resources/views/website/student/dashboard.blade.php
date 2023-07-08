@@ -30,8 +30,8 @@
                                             <div class="card-body">
                                                 <div class="media">
                                                     <div class="media-body">
-                                                        <p class="text-muted font-weight-medium">Enrolled Course</p>
-                                                        <h4 class="mb-0">{{$enrolled_course}}</h4>
+                                                        <p class="text-muted font-weight-medium">Approved Course</p>
+                                                        <h4 class="mb-0">{{$approved_course}}</h4>
                                                     </div>
                                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                                         <span class="avatar-title  bg-success">

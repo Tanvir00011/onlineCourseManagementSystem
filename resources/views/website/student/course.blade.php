@@ -47,7 +47,7 @@
 
                                             @foreach ($allEnrolledCourse as $item)
                                                 <tr
-                                                    class="text-center {{ $item->enroll_status == 'approved' ? '' : 'bg-warning text-white' }}">
+                                                    class="text-center {{ $item->enroll_status == 'approved' ? '' :(  $item->enroll_status == 'rejected'?'bg-danger text-white':'bg-warning text-white') }}">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->course->title }}</td>
                                                     <td>{{ $item->enroll_status }}</td>

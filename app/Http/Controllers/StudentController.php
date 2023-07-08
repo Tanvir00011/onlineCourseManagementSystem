@@ -15,11 +15,11 @@ class StudentController extends Controller
     public function dashboard()
     {
         $student_id = Session::get('student_id');
-        $enrolled_course = Enroll::where('student_id', $student_id)->where('payment_status', 'approved')->count();
-        $pending_course = Enroll::where('student_id', $student_id)->where('payment_status', 'pending')->count();
-        $rejected_course = Enroll::where('student_id', $student_id)->where('payment_status', 'rejected')->count();
+        $approved_course = Enroll::where('student_id', $student_id)->where('enroll_status', 'approved')->count();
+        $pending_course = Enroll::where('student_id', $student_id)->where('enroll_status', 'pending')->count();
+        $rejected_course = Enroll::where('student_id', $student_id)->where('enroll_status', 'rejected')->count();
         return view('website.student.dashboard')
-                ->with('enrolled_course',$enrolled_course)
+                ->with('approved_course',$approved_course)
                 ->with('pending_course',$pending_course)
                 ->with('rejected_course',$rejected_course);
     }

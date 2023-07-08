@@ -8,7 +8,7 @@
     <section>
         <div class="position-relative">
             <div class="hero-slider-item py-160"
-                style="background-image: url({{ asset('/') }}website/images/banner/21421.jpg);" data-icon="ti-comments"
+                style="background-image: url({{ asset('/') }}website/images/banner/21421.jpg);"
                 data-text="Consultation">
                 <div class="container">
                     <div class="row">
@@ -93,7 +93,7 @@
                         <div class="card text-center">
                             <div class="card-img-wrapper overlay-rounded-top">
                                 <img class="card-img-top rounded-0" src="{{ asset($course->image) }}" alt="service-image"
-                                    height="250">
+                                    height="250" style="object-fit: cover">
                             </div>
                             <div class="card-body p-0">
                                 <h4 class="card-title pt-3">{{ $course->title }}</h4>
