@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<!-- Mirrored from themesbrand.com/skote/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:08:04 GMT -->
+
 <head>
 
     <meta charset="utf-8" />
@@ -36,7 +36,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-4">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Sign in to continue to Skote.</p>
+                                    <p>Sign in to continue to OCMS.</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="card-body pt-0">
                         <div>
-                            <a href="index.html">
+                            <a href="{{route('home')}}">
                                 <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
                                                 <img src="{{asset('/')}}admin/assets/images/logo.svg" alt="" class="rounded-circle" height="34">
@@ -112,7 +112,7 @@
 
                     <div>
                         <p>Don't have an account ? <a href="auth-register.html" class="font-weight-medium text-primary"> Signup now </a> </p>
-                        <p>© 2020 Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+
                     </div>
                 </div>
 
@@ -132,5 +132,5 @@
 <script src="assets/js/app.js"></script>
 </body>
 
-<!-- Mirrored from themesbrand.com/skote/layouts/vertical/auth-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:08:04 GMT -->
+
 </html>
