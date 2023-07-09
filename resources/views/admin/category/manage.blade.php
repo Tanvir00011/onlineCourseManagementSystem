@@ -31,7 +31,7 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$category->name}}</td>
-                                <td><img src="{{asset($category->image)}}" alt="" height="100" width="100"/> </td>
+                                <td><img src="{{asset($category->image)}}" alt="" height="100" width="100" style="object-fit: cover; background-color: rgba(0,0,0,0.1)"/> </td>
 
                                 <td class="d-flex">
                                     <a href="{{route('category.edit', ['id' => $category->id])}}" class="btn btn-success btn-sm mr-1"> <i class="fa fa-edit"></i> </a>

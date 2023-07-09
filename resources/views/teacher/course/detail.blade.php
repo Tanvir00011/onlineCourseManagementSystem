@@ -40,7 +40,7 @@
                         </tr>
                         <tr>
                             <th>Course Image</th>
-                            <td><img src="{{asset($course->image)}}" alt="" height="100" width="120"></td>
+                            <td><img src="{{asset($course->image)}}" alt="" height="100" width="120" style="object-fit: contain"></td>
                         </tr>
                         <tr>
                             <th>Publication Status</th>

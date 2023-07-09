@@ -32,7 +32,7 @@
                             <td>{{$teacher->name}}</td>
                             <td>{{$teacher->email}}</td>
                             <td>{{$teacher->mobile}}</td>
-                            <td><img src="{{asset($teacher->image)}}" alt="" height="70" width="80"/></td>
+                            <td><img src="{{asset($teacher->image)}}" alt="" height="70" width="80" style="object-fit: cover"/></td>
                             <td class="d-flex">
                                 <a href="{{route('teacher.edit',['id'=>$teacher->id])}}" class="btn btn-success btn-sm mr-1">
                                     <i class="fa fa-edit"></i>
