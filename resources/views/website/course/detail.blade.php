@@ -2,22 +2,24 @@
 @section('body')
 
     <section>
-        <div class="container-fluid  mx-5">
+        <div class="container-fluid  mx-5 mb-5">
             <div class="row mx-5">
                 <div class="col-lg-8">
                     <div class="border rounded bg-white">
                         {{-- <img class="img-fluid w-100 rounded-top " src="{{ asset($course->image) }}" alt="blog-image"
                             style=" height:480px; object-fit: cover"> --}}
-                        <video id="my-video" class="video-js" controls preload="auto" height="480"
-                            poster="{{ asset($course_materials[0]->thumbnail_image) }}" data-setup='{"fluid": true}'>
-                            <source src="{{ asset($course_materials[0]->video) }}" type="video/mp4">
-                            {{-- <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" > --}}
+                       @if ($selected_material)
+                       <video id="my-video" class="video-js" controls preload="auto" height="480"
+                       poster="{{ asset($selected_material->thumbnail_image) }}" data-setup='{"fluid": true}'>
+                       <source src="{{ asset($selected_material->video) }}" type="video/mp4">
+                       {{-- <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" > --}}
 
-                            <p class="vjs-no-js">
-                                To view this video please enable JavaScript, and consider upgrading to a web browser that
-                                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                            </p>
-                        </video>
+                       <p class="vjs-no-js">
+                           To view this video please enable JavaScript, and consider upgrading to a web browser that
+                           <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                       </p>
+                   </video>
+                       @endif
                         <div class="p-4">
                             <h3>{{ $course->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
@@ -42,7 +44,7 @@
                                     style=" object-fit: cover;">
 
                                 </div> --}}
-                                <div class="card mb-3" style="background-color: rgba(0, 0, 0, .03)">
+                                <div class="card mb-3" style="background-color: {{$selected_material&&$selected_material->id==$item->id?"rgba(0, 255, 0, .1)":"rgba(0, 0, 0, .03)"}}  ">
                                     <div class="m-2">
                                         <div class="row">
                                             <div class="col">
@@ -54,7 +56,7 @@
                                                 <div class="">
                                                     <p>{{$item->title }}</p>
                                                     <br>
-                                                    <a href="#" class="btn btn-primary btn-sm">Complete</a>
+                                                    <a href="{{route('course-detail', ['id' => $course->id, 'material_id'=>$item->id])}}" class="btn btn-primary btn-sm">See this</a>
                                                 </div>
                                             </div>
 

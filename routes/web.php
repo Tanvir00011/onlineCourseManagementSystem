@@ -26,7 +26,7 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/about-us',[HomeController::class,'about'])->name('about');
 Route::get('/course-category/{id}',[HomeController::class,'courseCategory'])->name('course-category');
 Route::get('/all-course',[HomeController::class,'allCourse'])->name('all-course');
-Route::get('/course-detail/{id}',[HomeController::class,'courseDetail'])->name('course-detail');
+Route::get('/course-detail/{id}/{material_id?}',[HomeController::class,'courseDetail'])->name('course-detail');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/login-registration',[HomeController::class,'auth'])->name('login-registration');
 
