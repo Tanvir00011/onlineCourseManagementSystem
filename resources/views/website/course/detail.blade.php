@@ -1,4 +1,13 @@
 @extends('website.master')
+<style>
+
+  .btn-floating-action {
+    position: absolute;
+    top:-4px;
+    left: 34px; /* Adjust this value as needed to position the button */
+    z-index: 1;
+  }
+    </style>
 @section('body')
 
     <section>
@@ -47,16 +56,16 @@
                                 <div class="card mb-3" style="background-color: {{$selected_material&&$selected_material->id==$item->id?"rgba(0, 255, 0, .1)":"rgba(0, 0, 0, .03)"}}  ">
                                     <div class="m-2">
                                         <div class="row">
-                                            <div class="col">
+                                            <div class="col-5">
                                                 <img class="img w-100 rounded" src="{{ asset($item->thumbnail_image) }}"
                                                     alt=""
-                                                    style="object-fit: cover;background-color: rgba(34, 36, 38, .1); height: 160px;">
+                                                    style="object-fit: cover;background-color: rgba(34, 36, 38, .1); height: 100px;">
+                                                    <input type="checkbox" class=" form-check-input btn-floating-action" value="" style="height: 24px;width:24px;">
                                             </div>
-                                            <div class="col">
+                                            <div class="col-7">
                                                 <div class="">
-                                                    <p>{{$item->title }}</p>
-                                                    <br>
-                                                    <a href="{{route('course-detail', ['id' => $course->id, 'material_id'=>$item->id])}}" class="btn btn-primary btn-sm">See this</a>
+                                                    <p style="font-size: 16px">{{$item->title }}</p>
+                                                    <a href="{{route('course-detail', ['id' => $course->id, 'material_id'=>$item->id])}}" class="">See this</a>
                                                 </div>
                                             </div>
 
