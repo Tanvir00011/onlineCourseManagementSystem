@@ -8,6 +8,7 @@ use App\Models\Course;
 use App\Models\CourseMaterial;
 use App\Models\StudentCourseMaterialCompletion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Session;
 
 class HomeController extends Controller
@@ -49,12 +50,18 @@ class HomeController extends Controller
     public function courseDetail($id, $materialId = null)
     {
         $this->course = Course::find($id);
-        $enroll = Enroll::where(['course_id' => $id, 'student_id' => Session::get('student_id')])->first();
+        $student_id =  Session::get('student_id');
+        $enroll = Enroll::where(['course_id' => $id, 'student_id' => $student_id])->first();
         if (isset($enroll) && $enroll->enroll_status == 'approved') { //if enrolled show all the courses // else show only video which is free
-            $course_materials = CourseMaterial::where(['course_id' => $id])->get();
+            // $course_materials = CourseMaterial::where(['course_id' => $id])->get();
             $selected_material = null;
-
-
+            $course_materials =  DB::table('course_materials')
+                ->leftJoin('student_course_material_completions', function ($join) use ($student_id) {
+                    $join->on('course_materials.id', '=', 'student_course_material_completions.course_material_id')
+                        ->where('student_id', '=', $student_id);
+                })
+                ->where(['course_id' => $id])
+                ->select('course_materials.*', 'is_complete')->get();
             if ($materialId) {
                 $selected_material = CourseMaterial::where(['id' => $materialId])->first();
             } else if (count($course_materials) > 0) {

@@ -64,7 +64,7 @@
                                                     alt=""
                                                     style="object-fit: cover;background-color: rgba(34, 36, 38, .1); height: 100px;">
                                                 <input type="checkbox" class=" form-check-input btn-floating-action"
-                                                    value="{{ $item->id }}" onclick="handleComplete(this)"
+                                                    value="{{ $item->id }}" onclick="handleComplete(this)" {{$item->is_complete?"checked":""}}
                                                     style="height: 24px;width:24px;">
                                             </div>
                                             <div class="col-7">
