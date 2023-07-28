@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('student_course_material_completions', function (Blueprint $table) {
+        Schema::create('enroll_course_material_completions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('student_id');
+            $table->unsignedBigInteger('enroll_id');
             $table->unsignedBigInteger('course_material_id');
             $table->boolean('is_complete')->default(false);
-            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');;
+            $table->foreign('enroll_id')->references('id')->on('enrolls')->onDelete('cascade');;
             $table->foreign('course_material_id')->references('id')->on('course_materials')->onDelete('cascade');;
             $table->timestamps();
         });
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('student_course_material_completions');
+        Schema::dropIfExists('enroll_course_material_completions');
     }
 };

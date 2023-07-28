@@ -30,6 +30,7 @@
         border: 2px solid white;
         border-radius: 8px
     }
+    circle-progress::part(base) {width: 50px; height: auto;}
 </style>
 @section('body')
 
@@ -54,8 +55,10 @@
                                 </p>
                             </video>
                         @endif
+
+                        {{-- <circle-progress value="50" max="100"></circle-progress> --}}
                         <div class="p-4">
-                            <h3>{{ $course->title }}</h3>
+                            <h3>  {{ $course->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
                                 <li class="list-inline-item text-color">Trainer Name:{{ $course->teacher->name }}</li>
                                 <li class="list-inline-item text-color">Course Starting
@@ -97,13 +100,11 @@
                     <div class="col-lg-4">
                         <!-- Sidebar -->
                         <div class="bg-white px-2 ">
+                            <div class="progress mb-3">
+                                <div class="progress-bar" role="progressbar" style="width: {{$course_completed_percentage}}%;" aria-valuenow="{{$course_completed_percentage}}" aria-valuemin="0" aria-valuemax="100">{{$course_completed_percentage}}%</div>
+                              </div>
                             <!-- Search Widget -->
                             @foreach ($course_materials as $item)
-                                {{-- <div class="mb-2 card">
-                                    <img class="img card-img rounded-top " src="" alt="blog-image"
-                                    style=" object-fit: cover;">
-
-                                </div> --}}
                                 <div class="card mb-3"
                                     style="background-color: {{ $selected_material && $selected_material->id == $item->id ? 'rgba(0, 255, 0, .1)' : 'rgba(0, 0, 0, .03)' }}  ">
                                     <div class="m-2">
@@ -140,6 +141,7 @@
                     </div>
                 @endif
             </div>
+
         </div>
     </section>
 
@@ -149,6 +151,7 @@
             var requestData = {
                 checked: checkbox.checked,
                 id: checkbox.value,
+                enroll_id:{{$enroll_id}}
             };
 
             // Make the AJAX POST request
@@ -160,6 +163,7 @@
                     'X-CSRF-TOKEN': "{{ csrf_token() }}" // Include the CSRF token in the request headers
                 },
                 success: function(response) {
+                    location.reload();
                     console.log('Data sent successfully!');
                     console.log(response); // The response from the server, if any
                 },
@@ -171,5 +175,6 @@
 
         };
     </script>
+
 
 @endsection

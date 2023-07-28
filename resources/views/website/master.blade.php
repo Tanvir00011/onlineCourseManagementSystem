@@ -265,6 +265,7 @@
 
     <!-- Datatable init js -->
     <script src="{{ asset('/') }}admin/assets/js/pages/datatables.init.js"></script>
+    <script src="{{ asset('/') }}admin/assets/js/circle-progress.min.js" type="module"></script>
 
 
     @if (Session::has('message'))
