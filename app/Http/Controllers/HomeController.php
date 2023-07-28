@@ -6,16 +6,17 @@ use App\Models\Category;
 use App\Models\Enroll;
 use App\Models\Course;
 use App\Models\CourseMaterial;
+use App\Models\StudentCourseMaterialCompletion;
 use Illuminate\Http\Request;
 use Session;
 
 class HomeController extends Controller
 {
-    private $course,$courses,$category, $categories;
+    private $course, $courses, $category, $categories;
     public function index()
     {
-        $this->courses = Course::where('status',1)->get();
-        return view('website.home.index',['courses'=>$this->courses]);
+        $this->courses = Course::where('status', 1)->get();
+        return view('website.home.index', ['courses' => $this->courses]);
     }
 
     public function about()
@@ -27,13 +28,13 @@ class HomeController extends Controller
     {
         $this->category = Category::find($id);
 
-        return view('website.course-category.index',['category'=>$this->category]);
+        return view('website.course-category.index', ['category' => $this->category]);
     }
 
     public function allCourse()
     {
-        $this->courses= Course::where('status',1)->get();
-        return view('website.course.index',['courses'=>$this->courses]);
+        $this->courses = Course::where('status', 1)->get();
+        return view('website.course.index', ['courses' => $this->courses]);
     }
 
     public function contact()
@@ -41,40 +42,46 @@ class HomeController extends Controller
         return view('website.contact.index');
     }
 
-    public function auth()//student login screen
+    public function auth() //student login screen
     {
         return view('website.auth.index');
     }
-    public function courseDetail($id, $materialId=null)
+    public function courseDetail($id, $materialId = null)
     {
         $this->course = Course::find($id);
-        $enroll = Enroll::where(['course_id' => $id,'student_id'=> Session::get('student_id')])->first();
-        if(isset($enroll)&&$enroll->enroll_status=='approved'){//if enrolled show all the courses // else show only video which is free
+        $enroll = Enroll::where(['course_id' => $id, 'student_id' => Session::get('student_id')])->first();
+        if (isset($enroll) && $enroll->enroll_status == 'approved') { //if enrolled show all the courses // else show only video which is free
             $course_materials = CourseMaterial::where(['course_id' => $id])->get();
             $selected_material = null;
 
 
-            if($materialId){
-            $selected_material = CourseMaterial::where(['id' => $materialId])->first();
-            }else if(count($course_materials)>0){
+            if ($materialId) {
+                $selected_material = CourseMaterial::where(['id' => $materialId])->first();
+            } else if (count($course_materials) > 0) {
                 $selected_material = $course_materials[0];
             }
-            return view('website.course.detail',[
-                'course'=>$this->course,
+            return view('website.course.detail', [
+                'course' => $this->course,
                 'is_enrolled' => isset($enroll) ? 1 : 0,
-                'enroll_status' =>  isset($enroll)?$enroll->enroll_status:'',
+                'enroll_status' =>  isset($enroll) ? $enroll->enroll_status : '',
                 'course_materials' => $course_materials,
                 'selected_material' => $selected_material,
             ]);
-        }else{
-            $course_materials = CourseMaterial::where(['course_id' => $id,'is_free_preview'=>true])->get();
-            return view('website.course.detail_public',[
-                'course'=>$this->course,
+        } else {
+            $course_materials = CourseMaterial::where(['course_id' => $id, 'is_free_preview' => true])->get();
+            return view('website.course.detail_public', [
+                'course' => $this->course,
                 'is_enrolled' => isset($enroll) ? 1 : 0,
-                'enroll_status' =>  isset($enroll)?$enroll->enroll_status:'',
+                'enroll_status' =>  isset($enroll) ? $enroll->enroll_status : '',
                 'course_materials' => $course_materials,
             ]);
         }
+    }
 
+    function handleCourseMaterialIsComplete(Request $request)
+    {
+        $student_id = Session::get('student_id');
+        $msg = StudentCourseMaterialCompletion::materialCompletionUpdate($request->id, $student_id, $request->checked);
+        return $msg;
     }
 }

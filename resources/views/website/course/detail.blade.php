@@ -1,13 +1,13 @@
 @extends('website.master')
 <style>
-
-  .btn-floating-action {
-    position: absolute;
-    top:-4px;
-    left: 34px; /* Adjust this value as needed to position the button */
-    z-index: 1;
-  }
-    </style>
+    .btn-floating-action {
+        position: absolute;
+        top: -4px;
+        left: 34px;
+        /* Adjust this value as needed to position the button */
+        z-index: 1;
+    }
+</style>
 @section('body')
 
     <section>
@@ -17,18 +17,20 @@
                     <div class="border rounded bg-white">
                         {{-- <img class="img-fluid w-100 rounded-top " src="{{ asset($course->image) }}" alt="blog-image"
                             style=" height:480px; object-fit: cover"> --}}
-                       @if ($selected_material)
-                       <video id="my-video" class="video-js" controls preload="auto" height="480"
-                       poster="{{ asset($selected_material->thumbnail_image) }}" data-setup='{"fluid": true}'>
-                       <source src="{{ asset($selected_material->video) }}" type="video/mp4">
-                       {{-- <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" > --}}
+                        @if ($selected_material)
+                            <video id="my-video" class="video-js" controls preload="auto" height="480"
+                                poster="{{ asset($selected_material->thumbnail_image) }}" data-setup='{"fluid": true}'>
+                                <source src="{{ asset($selected_material->video) }}" type="video/mp4">
+                                {{-- <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" > --}}
 
-                       <p class="vjs-no-js">
-                           To view this video please enable JavaScript, and consider upgrading to a web browser that
-                           <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                       </p>
-                   </video>
-                       @endif
+                                <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a web browser
+                                    that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5
+                                        video</a>
+                                </p>
+                            </video>
+                        @endif
                         <div class="p-4">
                             <h3>{{ $course->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
@@ -53,19 +55,23 @@
                                     style=" object-fit: cover;">
 
                                 </div> --}}
-                                <div class="card mb-3" style="background-color: {{$selected_material&&$selected_material->id==$item->id?"rgba(0, 255, 0, .1)":"rgba(0, 0, 0, .03)"}}  ">
+                                <div class="card mb-3"
+                                    style="background-color: {{ $selected_material && $selected_material->id == $item->id ? 'rgba(0, 255, 0, .1)' : 'rgba(0, 0, 0, .03)' }}  ">
                                     <div class="m-2">
                                         <div class="row">
                                             <div class="col-5">
                                                 <img class="img w-100 rounded" src="{{ asset($item->thumbnail_image) }}"
                                                     alt=""
                                                     style="object-fit: cover;background-color: rgba(34, 36, 38, .1); height: 100px;">
-                                                    <input type="checkbox" class=" form-check-input btn-floating-action" value="" style="height: 24px;width:24px;">
+                                                <input type="checkbox" class=" form-check-input btn-floating-action"
+                                                    value="{{ $item->id }}" onclick="handleComplete(this)"
+                                                    style="height: 24px;width:24px;">
                                             </div>
                                             <div class="col-7">
                                                 <div class="">
-                                                    <p style="font-size: 16px">{{$item->title }}</p>
-                                                    <a href="{{route('course-detail', ['id' => $course->id, 'material_id'=>$item->id])}}" class="">See this</a>
+                                                    <p style="font-size: 16px">{{ $item->title }}</p>
+                                                    <a href="{{ route('course-detail', ['id' => $course->id, 'material_id' => $item->id]) }}"
+                                                        class="">See this</a>
                                                 </div>
                                             </div>
 
@@ -80,5 +86,32 @@
         </div>
     </section>
     <!-- /blog-single -->
+    <script>
+        function handleComplete(checkbox) {
+            var requestData = {
+                checked: checkbox.checked,
+                id: checkbox.value,
+            };
+
+            // Make the AJAX POST request
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('handle-course-material-is-complete') }}', // Replace 'ajax.getData' with your defined route name
+                data: requestData,
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}" // Include the CSRF token in the request headers
+                },
+                success: function(response) {
+                    console.log('Data sent successfully!');
+                    console.log(response); // The response from the server, if any
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error occurred:');
+                    console.error(error); // Show the error details
+                }
+            });
+
+        };
+    </script>
 
 @endsection
