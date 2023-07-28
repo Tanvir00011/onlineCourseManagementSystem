@@ -72,16 +72,20 @@
                                 <h3>Contact Form</h3>
                             </div>
                             <div class="col-lg-6">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name" required="">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Name"
+                                    required="">
                             </div>
                             <div class="col-lg-6">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required="">
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Email Address" required="">
                             </div>
                             <div class="col-12">
-                                <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required="">
+                                <input type="text" name="subject" id="subject" class="form-control"
+                                    placeholder="Subject" required="">
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control p-2" name="message" id="message" placeholder="Your Message Here..." required="" style="height: 150px;"></textarea>
+                                <textarea class="form-control p-2" name="message" id="message" placeholder="Your Message Here..." required=""
+                                    style="height: 150px;"></textarea>
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-primary" type="submit" value="send">Submit Now</button>
