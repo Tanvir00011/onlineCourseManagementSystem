@@ -7,6 +7,29 @@
         /* Adjust this value as needed to position the button */
         z-index: 1;
     }
+
+    .btn-floating-center {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        margin-right: -50%;
+        top: 50%;
+        left: 50%;
+        background-color: 'black';
+        /* Adjust this value as needed to position the button */
+        z-index: 1;
+    }
+
+    .icon-container {
+        height: 40px;
+        width: 72px;
+        background-color: rgba(34, 36, 38, 0.5);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+        border-radius: 8px
+    }
 </style>
 @section('body')
 
@@ -61,11 +84,19 @@
                                         <div class="row">
                                             <div class="col-5">
                                                 <img class="img w-100 rounded" src="{{ asset($item->thumbnail_image) }}"
-                                                    alt=""
                                                     style="object-fit: cover;background-color: rgba(34, 36, 38, .1); height: 100px;">
                                                 <input type="checkbox" class=" form-check-input btn-floating-action"
-                                                    value="{{ $item->id }}" onclick="handleComplete(this)" {{$item->is_complete?"checked":""}}
+                                                    value="{{ $item->id }}" onclick="handleComplete(this)"
+                                                    {{ $item->is_complete ? 'checked' : '' }}
                                                     style="height: 24px;width:24px;">
+
+                                                <div class=" btn-floating-center">
+                                                    <a class="icon-container"
+                                                        href="{{ route('course-detail', ['id' => $course->id, 'material_id' => $item->id]) }}">
+                                                        <i class="fa-solid fa-play fa-3"
+                                                            style="font-size: 20px; color: white"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                             <div class="col-7">
                                                 <div class="">
