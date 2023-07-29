@@ -18,7 +18,8 @@ class HomeController extends Controller
     public function index()
     {
         $this->courses = Course::where('status', 1)->get();
-        return view('website.home.index', ['courses' => $this->courses]);
+        $reviews = CourseReview::all();
+        return view('website.home.index', ['courses' => $this->courses, 'reviews' => $reviews]);
     }
 
     public function about()

@@ -113,6 +113,8 @@
     </section>
 
     <!-- testimonial -->
+    @if (count($reviews)>0)
+
     <section class="section pb-0">
         <div class="container">
             <div class="row">
@@ -126,36 +128,19 @@
                 <div class="col-lg-7 col-md-7 align-self-center pl-0">
                     <div class="testimonial-slider p-5">
                         <!-- slider item -->
+                        @foreach ($reviews as $review)
                         <div class="outline-0">
                             <i class="testimonial-icon ti-quote-left"></i>
-                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid
-                                sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi
-                                aliquip excepteur.</p>
-                            <h4 class="font-weight-normal">Julia Robertson</h4>
-                            <h6 class="font-secondary text-color">Happy Clients</h6>
+                            <p class="text-dark">{{$review->review_text}}</p>
+                            <h4 class="font-weight-normal">{{$review->student->name}}</h4>
+                            {{-- <h6 class="font-secondary text-color">Happy Clients</h6> --}}
                         </div>
-                        <!-- slider item -->
-                        <div class="outline-0">
-                            <i class="testimonial-icon ti-quote-left"></i>
-                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid
-                                sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi
-                                aliquip excepteur.</p>
-                            <h4 class="font-weight-normal">Julia Robertson</h4>
-                            <h6 class="font-secondary text-color">Happy Clients</h6>
-                        </div>
-                        <!-- slider item -->
-                        <div class="outline-0">
-                            <i class="testimonial-icon ti-quote-left"></i>
-                            <p class="text-dark">Lorem ipsum dolor sit amet constur adipisicing elit sed eiusmtempor incid
-                                sed dolore magna aliqu enim minim veniam quis nostrud exercittion ullamco labo ris nisi
-                                aliquip excepteur.</p>
-                            <h4 class="font-weight-normal">Julia Robertson</h4>
-                            <h6 class="font-secondary text-color">Happy Clients</h6>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    @endif
     <!-- /testimonial -->
 @endsection

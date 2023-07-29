@@ -22,4 +22,9 @@ class CourseReview extends Model
         $reviewExist->save();
         return 'success';
     }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }
