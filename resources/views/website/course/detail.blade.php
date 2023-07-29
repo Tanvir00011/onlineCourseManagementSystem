@@ -30,7 +30,11 @@
         border: 2px solid white;
         border-radius: 8px
     }
-    circle-progress::part(base) {width: 50px; height: auto;}
+
+    circle-progress::part(base) {
+        width: 50px;
+        height: auto;
+    }
 </style>
 @section('body')
 
@@ -58,7 +62,7 @@
 
                         {{-- <circle-progress value="50" max="100"></circle-progress> --}}
                         <div class="p-4">
-                            <h3>  {{ $course->title }}</h3>
+                            <h3> {{ $course->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
                                 <li class="list-inline-item text-color">Trainer Name:{{ $course->teacher->name }}</li>
                                 <li class="list-inline-item text-color">Course Starting
@@ -69,40 +73,26 @@
                             <div>{!! $course->description !!}</div>
                         </div>
                     </div>
-                    <div class="p-5 rounded box-shadow">
-                        <form action="#" class="row">
-                            <div class="col-12">
-                                <h3>Contact Form</h3>
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Name"
-                                    required="">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="email" class="form-control" name="email" id="email"
-                                    placeholder="Email Address" required="">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" name="subject" id="subject" class="form-control"
-                                    placeholder="Subject" required="">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control p-2" name="message" id="message" placeholder="Your Message Here..." required=""
-                                    style="height: 150px;"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit" value="send">Submit Now</button>
-                            </div>
-                        </form>
-                    </div>
                 </div>
                 @if (count($course_materials) > 0)
                     <div class="col-lg-4">
                         <!-- Sidebar -->
                         <div class="bg-white px-2 ">
-                            <div class="progress mb-3">
-                                <div class="progress-bar" role="progressbar" style="width: {{$course_completed_percentage}}%;" aria-valuenow="{{$course_completed_percentage}}" aria-valuemin="0" aria-valuemax="100">{{$course_completed_percentage}}%</div>
-                              </div>
+                            <!-- Button trigger modal -->
+                            @if ($course_completed_percentage == 100)
+                                <button type="button" class="btn btn-warning   btn-sm rounded-sm w-100 mb-3"
+                                    data-toggle="modal" data-target="#exampleModalCenter">
+                                    Write Review </button>
+                            @endif
+
+                            <div class="progress mb-3 rounded-sm">
+                                <div class="progress-bar rounded-sm" role="progressbar"
+                                    style="width: {{ $course_completed_percentage }}%;"
+                                    aria-valuenow="{{ $course_completed_percentage }}" aria-valuemin="0"
+                                    aria-valuemax="100">{{ $course_completed_percentage }}%</div>
+                            </div>
+
+
                             <!-- Search Widget -->
                             @foreach ($course_materials as $item)
                                 <div class="card mb-3"
@@ -143,6 +133,29 @@
             </div>
 
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Write review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control p-2" name="message" id="message" placeholder="Your Message Here..."
+                            style="height: 150px;"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm rounded-sm"
+                            data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success btn-sm rounded-sm">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- /blog-single -->
@@ -151,7 +164,7 @@
             var requestData = {
                 checked: checkbox.checked,
                 id: checkbox.value,
-                enroll_id:{{$enroll_id}}
+                enroll_id: {{ $enroll_id }}
             };
 
             // Make the AJAX POST request
