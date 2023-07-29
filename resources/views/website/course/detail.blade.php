@@ -81,7 +81,7 @@
                             <!-- Button trigger modal -->
                             @if ($course_completed_percentage == 100)
                                 <button type="button" class="btn btn-warning   btn-sm rounded-sm w-100 mb-3"
-                                    data-toggle="modal" data-target="#exampleModalCenter">
+                                    data-toggle="modal" data-target="#reviewModal">
                                     Write Review </button>
                             @endif
 
@@ -134,8 +134,8 @@
 
         </div>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+            aria-labelledby="reviewModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -145,13 +145,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <textarea class="form-control p-2" name="message" id="message" placeholder="Your Message Here..."
-                            style="height: 150px;"></textarea>
+                        <textarea class="form-control p-2" name="message" id="review_text" placeholder="Your Message Here..."
+                            style="height: 150px;" required></textarea>
+                            <div id="review_text_error" class="text-danger float-right" style="margin-top: -15px;"> </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn-sm rounded-sm"
                             data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success btn-sm rounded-sm">Submit</button>
+                        <button type="button" class="btn btn-success btn-sm rounded-sm" onclick="handleWriteReview()">Submit</button>
                     </div>
                 </div>
             </div>
@@ -176,6 +177,39 @@
                     'X-CSRF-TOKEN': "{{ csrf_token() }}" // Include the CSRF token in the request headers
                 },
                 success: function(response) {
+                    location.reload();
+                    console.log('Data sent successfully!');
+                    console.log(response); // The response from the server, if any
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error occurred:');
+                    console.error(error); // Show the error details
+                }
+            });
+
+        };
+
+        function handleWriteReview() {
+            var requestData = {
+                review_text: $('#review_text').val(),
+                course_id: {{ $course->id }}
+            };
+            if(!requestData?.review_text){
+                $('#review_text_error').text('This field is required')
+                return;
+            }
+            $('#review_text_error').text('')
+            // Make the AJAX POST request
+            $('#reviewModal').modal('hide');
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('handle-write-review') }}', // Replace 'ajax.getData' with your defined route name
+                data: requestData,
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}" // Include the CSRF token in the request headers
+                },
+                success: function(response) {
+                    alert('Review added successfully')
                     location.reload();
                     console.log('Data sent successfully!');
                     console.log(response); // The response from the server, if any

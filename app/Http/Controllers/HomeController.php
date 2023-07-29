@@ -6,10 +6,11 @@ use App\Models\Category;
 use App\Models\Enroll;
 use App\Models\Course;
 use App\Models\CourseMaterial;
+use App\Models\CourseReview;
 use App\Models\EnrollCourseMaterialCompletion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -93,6 +94,13 @@ class HomeController extends Controller
     function handleCourseMaterialIsComplete(Request $request)
     {
         $msg = EnrollCourseMaterialCompletion::materialCompletionUpdate($request->id, $request->enroll_id, $request->checked);
+        return $msg;
+    }
+
+    function handleWriteReview(Request $request)
+    {
+        $student_id = session('student_id');
+        $msg = CourseReview::writeReview($student_id, $request->course_id, $request->review_text);
         return $msg;
     }
 }
