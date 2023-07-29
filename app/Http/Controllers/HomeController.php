@@ -70,15 +70,17 @@ class HomeController extends Controller
             } else if (count($course_materials) > 0) {
                 $selected_material = $course_materials[0];
             }
-            $course_item_completed =  isset($course_item_completed) ? $course_item_completed:0;
+            $course_item_completed =  isset($course_item_completed) ? $course_item_completed : 0;
+            $previous_review = CourseReview::where(['student_id' => $student_id, 'course_id' => $id])->first();
             return view('website.course.detail', [
                 'course' => $this->course,
                 'enroll_id' =>  $enroll_id,
                 'course_materials' => $course_materials,
                 'selected_material' => $selected_material,
-                'course_item_completed'=>$course_item_completed,
-                'total_course_items'=>count($course_materials),
-                'course_completed_percentage'=>intval(($course_item_completed/count($course_materials))*100),
+                'course_item_completed' => $course_item_completed,
+                'total_course_items' => count($course_materials),
+                'course_completed_percentage' => intval(($course_item_completed / count($course_materials)) * 100),
+                'previous_review' => isset($previous_review) ? $previous_review->review_text : ''
             ]);
         } else {
             $course_materials = CourseMaterial::where(['course_id' => $id, 'is_free_preview' => true])->get();

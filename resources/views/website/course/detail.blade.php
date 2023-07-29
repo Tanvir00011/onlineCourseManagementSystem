@@ -82,7 +82,7 @@
                             @if ($course_completed_percentage == 100)
                                 <button type="button" class="btn btn-warning   btn-sm rounded-sm w-100 mb-3"
                                     data-toggle="modal" data-target="#reviewModal">
-                                    Write Review </button>
+                                    {{$previous_review?'Edit':'Write'}} Review </button>
                             @endif
 
                             <div class="progress mb-3 rounded-sm">
@@ -139,14 +139,14 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Write review</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{$previous_review?'Edit':'Write'}} review</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <textarea class="form-control p-2" name="message" id="review_text" placeholder="Your Message Here..."
-                            style="height: 150px;" required></textarea>
+                            style="height: 150px;" required>{{$previous_review}}</textarea>
                             <div id="review_text_error" class="text-danger float-right" style="margin-top: -15px;"> </div>
                     </div>
                     <div class="modal-footer">
