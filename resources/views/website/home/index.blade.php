@@ -45,7 +45,6 @@
                     <div class="mb-4 card px-2 py-5 text-center">
                         <i class="h2 text-primary d-inline-block mb-20 fa-solid fa-cloud-arrow-up"></i>
                         <h4>Free Update</h4>
-                        <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
                 <!-- service-item -->
@@ -53,7 +52,6 @@
                     <div class="mb-4 card px-2 py-5 text-center">
                         <i class="h2 text-primary d-inline-block mb-20 fa-sharp fa-solid fa-hand-holding-heart"></i>
                         <h4>Friendly $ Full Support</h4>
-                        <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
                 <!-- service-item -->
@@ -62,7 +60,6 @@
 
                         <i class="h2 text-primary d-inline-block mb-20 fa-solid fa-code"></i>
                         <h4>Clean Code</h4>
-                        <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
                 <!-- service-item -->
@@ -70,7 +67,6 @@
                     <div class="mb-4 card px-2 py-5 text-center">
                         <i class="h2 text-primary d-inline-block mb-20 fa-brands fa-free-code-camp"></i>
                         <h4>Free Resources</h4>
-                        <P>Lorem ipsum dolor amet consecte tur adipisicing elit sed done eius mod tempor enim ad minim</P>
                     </div>
                 </div>
             </div>
@@ -133,7 +129,7 @@
                             <i class="testimonial-icon ti-quote-left"></i>
                             <p class="text-dark">{{$review->review_text}}</p>
                             <h4 class="font-weight-normal">{{$review->student->name}}</h4>
-                            {{-- <h6 class="font-secondary text-color">Happy Clients</h6> --}}
+                            <h6 class="font-secondary text-color">{{$review->course->title}}</h6>
                         </div>
                         @endforeach
                     </div>

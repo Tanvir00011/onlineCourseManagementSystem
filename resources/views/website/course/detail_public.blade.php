@@ -69,23 +69,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-lg-7">
-                                <!-- tags -->
-                                <div class="d-flex">
-                                    <span class="font-weight-light mt-2 mr-3">Tags:</span>
-                                    <ul class="list-inline tag-list">
-                                        <li class="list-inline-item">
-                                            <a href="#">Business</a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#">Marketing</a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a href="#">Finance</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     <!-- comments -->
@@ -106,21 +90,21 @@
                                         <div class="col-lg-12">
                                             <label>Full Name<span class="text-danger">*</span></label>
                                             <input type="text" class="form-control mb-30" id="user-name" name="name"
-                                                placeholder="Your name here">
+                                                placeholder="Your name here" value="{{old('name')}}" required>
                                             <span
                                                 class="text-danger">{{ $errors->has('name') ? $errors->first('name') : '' }}</span>
                                         </div>
                                         <div class="col-lg-12">
                                             <label>Email Address<span class="text-danger">*</span></label>
                                             <input type="email" id="user-email" name="email" class="form-control mb-30"
-                                                placeholder="Your email address here">
+                                                placeholder="Your email address here" required  value="{{old('email')}}">
                                             <span
                                                 class="text-danger">{{ $errors->has('email') ? $errors->first('email') : '' }}</span>
                                         </div>
                                         <div class="col-lg-12">
                                             <label>Mobile Number<span class="text-danger">*</span></label>
                                             <input type="number" id="user-mobile" name="mobile" class="form-control mb-30"
-                                                placeholder="Your mobile number here">
+                                                placeholder="Your mobile number here" required  value="{{old('mobile')}}">
                                             <span
                                                 class="text-danger">{{ $errors->has('mobile') ? $errors->first('mobile') : '' }}</span>
                                         </div>
