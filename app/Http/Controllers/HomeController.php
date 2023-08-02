@@ -73,6 +73,10 @@ class HomeController extends Controller
             }
             $course_item_completed =  isset($course_item_completed) ? $course_item_completed : 0;
             $previous_review = CourseReview::where(['student_id' => $student_id, 'course_id' => $id])->first();
+            $course_completed_percentage =0;
+            if($course_item_completed>0&&count($course_materials)>0){
+                $course_completed_percentage = intval(($course_item_completed / count($course_materials)) * 100);
+            }
             return view('website.course.detail', [
                 'course' => $this->course,
                 'enroll_id' =>  $enroll_id,
@@ -80,7 +84,7 @@ class HomeController extends Controller
                 'selected_material' => $selected_material,
                 'course_item_completed' => $course_item_completed,
                 'total_course_items' => count($course_materials),
-                'course_completed_percentage' => intval(($course_item_completed / count($course_materials)) * 100),
+                'course_completed_percentage' => $course_completed_percentage ,
                 'previous_review' => isset($previous_review) ? $previous_review->review_text : ''
             ]);
         } else {
