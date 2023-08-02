@@ -56,12 +56,12 @@ class StudentController extends Controller
             }
             else
             {
-                return  back()->with('message','sorry..password is invalid');
+                return  back()->with('error','sorry..password is invalid');
             }
         }
         else
         {
-            return back()->with('message','Sorry..email address is invalid');
+            return back()->with('error','Sorry..email address is invalid');
         }
     }
 

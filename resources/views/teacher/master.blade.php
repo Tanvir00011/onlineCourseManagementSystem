@@ -234,14 +234,14 @@
                         <li class="menu-title">Menu</li>
 
                         <li>
-                            <a href="{{ route('teacher.dashboard') }}" class="waves-effect">
+                            <a href="{{ route('teacher.dashboard') }}">
                                 <i class="bx bx-home-circle"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <a href="javascript: void(0);" class="has-arrow">
                                 <i class="bx bx-layout"></i>
                                 <span>Course Module</span>
                             </a>
@@ -251,7 +251,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="{{ route('teacher.enrolled.student') }}" class="waves-effect">
+                            <a href="{{ route('teacher.enrolled.student') }}">
                                 <i class="bx bx-store"></i>
                                 <span>All Enrolled Student</span>
                             </a>
