@@ -30,10 +30,10 @@
                         <div class="p-4">
                             <h3>{{ $course->title }}</h3>
                             <ul class="list-inline d-block pb-4 border-bottom mb-3">
-                                <li class="list-inline-item text-color">Trainer Name:{{ $course->teacher->name }}</li>
+                                <li class="list-inline-item text-color">Trainer Name: {{ $course->teacher->name }}</li>
                                 <li class="list-inline-item text-color">Course Starting
                                     Date:{{ $course->starting_date }}</li>
-                                <li class="list-inline-item text-color">Course Category:{{ $course->category->name }}
+                                <li class="list-inline-item text-color">Course Category: {{ $course->category->name }}
                                 </li>
                             </ul>
                             <div>{!! $course->description !!}</div>
