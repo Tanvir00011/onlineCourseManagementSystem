@@ -33,7 +33,7 @@
                                 <td>{{$course->status ==1 ? 'published' : 'Unpublished'}}</td>
                                 <td class="d-flex">
                                     <a href="{{route('course.detail',['id'=>$course->id])}}" class="btn btn-info btn-sm mr-1">
-                                        <i class="fa fa-edit"></i>
+                                        <i class="fa fa-eye"></i>
                                     </a>
                                     <a href="{{route('course.edit',['id'=>$course->id])}}" class="btn btn-success btn-sm mr-1">
                                         <i class="fa fa-edit"></i>

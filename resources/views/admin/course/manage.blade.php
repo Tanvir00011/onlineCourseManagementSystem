@@ -35,7 +35,7 @@
                                 <td>{{$course->status ==1 ? 'published' : 'Unpublished'}}</td>
                                 <td class="d-flex">
                                     <a href="{{route('admin.course-detail',['id'=>$course->id])}}" class="btn btn-info btn-sm mr-1">
-                                        <i class="fa fa-book-open"></i>
+                                        <i class="fa fa-eye"></i>
                                     </a>
                                     <a href="{{route('admin.update-course-status',['id'=>$course->id])}}" class="btn btn-success btn-sm mr-1">
                                         <i class="fa fa-arrow-circle-up"></i>
